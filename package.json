@@ -1,0 +1,10 @@
+{
+  "name": "das",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "GPL v3",
+  "dependencies": {
+    "node-hid": "^0.7.2",
+    "usb-cdc-acm": "^0.1.1"
+  }
+}
