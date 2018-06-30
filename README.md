@@ -4,8 +4,8 @@ npm install
 
 with node:
 
-node ./init.js
+node ./POC/init.js
 
-node ./poc.js
+node ./POC/poc.js
 
 init must be run every time keyboard reboots
