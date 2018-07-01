@@ -1,4 +1,4 @@
-import { Keyboard } from "../../src";
+import {Keyboard} from "../../src";
 
 // Ok. Let's create a keyboard
 // This will be done with the default values for USB vendor, product, and interface

@@ -22,5 +22,5 @@
         "no-trailing-whitespace": false,
         "eofline": false
     },
-    "rulesDirectory": [],
+    "rulesDirectory": []
 }
