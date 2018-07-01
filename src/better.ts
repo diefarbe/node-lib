@@ -5,7 +5,7 @@ const red = 0x00;
 const green = 0xFF;
 const blue = 0x00;
 
-async function connect() {
+export async function connect() {
     var usb = require('usb');
 
     var device = usb.findByIds(0x24f0, 0x2020);
@@ -76,5 +76,3 @@ async function connect() {
     }
 
 }
-
-connect();
