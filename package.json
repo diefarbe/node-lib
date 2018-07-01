@@ -13,8 +13,8 @@
     "build": "tsc",
     "clean": "rimraf ./dist",
     "lint": "tslint -p ./",
-    "poc-ts": "ts-node --project poc/ts/tsconfig.json poc/ts/index.ts",
-    "poc-ts-dev": "nodemon --exec ./node_modules/.bin/ts-node -- ./POC/ts/hdiapi.ts",
+    "poc-ts": "ts-node --project tsconfig.json POC/ts/index.ts",
+    "poc-ts-dev": "nodemon --exec ./node_modules/.bin/ts-node -- ./ts/hdiapi.ts",
     "prebuild": "npm-run-all clean",
     "test": "echo \"Ya we probably need to have some unit tests...\"",
     "start": "npm run poc-ts-dev"
