@@ -15,7 +15,7 @@
     "lint": "tslint -p ./",
     "poc-ts": "ts-node --project poc/ts/tsconfig.json poc/ts/index.ts",
     "prebuild": "npm-run-all clean",
-    "test": "echo \"Ya we probably need to have some unit tests...\""
+    "test": "echo \"Ya we probably need to have some unit tests...\"",
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
   },
@@ -30,7 +30,6 @@
     "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2",
-    "ts-node": "^7.0.0",
     "nodemon": "^1.17.5",
     "node-hid": "^0.7.2"
   }
