@@ -7,9 +7,8 @@ export function featureReports(device: any, report: number[]) {
 	}
 	seq++;
 	buff[3] = seq;
-	console.log(device.sendFeatureReport(buff));
+	device.sendFeatureReport(buff);
 	let res = device.getFeatureReport(0, 65);
-	console.log(res);
 	if (res[2] != 0x14 || buff[3] != seq) {
 		throw new Error("no ack");
 	}
