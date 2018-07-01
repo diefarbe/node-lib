@@ -1,7 +1,5 @@
-import {Device, devices, HID} from "node-hid";
-
-import {Key} from "./key";
-import {Packet} from "./packet";
+import { Device, devices, HID } from "node-hid";
+import { KeyState } from "./key-state";
 
 export class Keyboard {
   private interface: number;
@@ -70,51 +68,17 @@ export class Keyboard {
   }
 
   /**
-   * Sends a key color modification command.
-   *
-   * @param {Key} key the key you want to change
-   * @param {number} r the red value (0x00 - 0xFF)
-   * @param {number} g the green value (0x00 - 0xFF)
-   * @param {number} b the blue value (0x00 - 0xFF)
+   * Sets an array of KeyStates to the keyboard
    */
-  public setRgb(key: Key, r: number, g: number, b: number) {
-    for (const packet of key.withColor(r, g, b).toPackets()) {
-      this.executePacket(packet);
-    }
-  }
-
-  /**
-   * Same as setRgb(), but accepts a full hex code.
-   *
-   * @param {Key} key the key you want to change
-   * @param {string | number} rgb the red, green, and blue values (0x000000 - 0xFFFFFF)
-   */
-  public setRgbHex(key: Key, rgb: string | number) {
-    // this could probably be optimized, but oh well
-    if (typeof rgb === "string") {
-      if (rgb.length != 6) {
-        throw new Error("Length should be 6");
+  public set(states: KeyState[] | KeyState) {
+    if (Array.isArray(states)) {
+      for (const state of states) {
+        this.executePackets(state);
       }
-      this.setRgb(key,
-        parseInt(rgb.substr(0, 2), 16),
-        parseInt(rgb.substr(2, 2), 16),
-        parseInt(rgb.substr(4, 2), 16));
     } else {
-      if (rgb < 0x000000) {
-        throw new Error("Color cannot be less than zero");
-      }
-      if (rgb > 0xFFFFFF) {
-        throw new Error("Color cannot be greater than 0xFFFFFF");
-      }
-      let newRgb = rgb.toString(16);
-      while (newRgb.length < 6) {
-        newRgb = "0" + newRgb;
-      }
-      this.setRgb(key,
-        parseInt(newRgb.substr(0, 2), 16),
-        parseInt(newRgb.substr(2, 2), 16),
-        parseInt(newRgb.substr(4, 2), 16));
+      this.executePackets(states);
     }
+
   }
 
   /**
@@ -140,8 +104,10 @@ export class Keyboard {
     }
   }
 
-  private executePacket(packet: Packet) {
-    this.featureReports(packet.buildPacketBytes());
+  private executePackets(state: KeyState) {
+    for (const aPacket of state.build()) {
+      this.featureReports(aPacket);
+    }
   }
 
   private featureReports(report: number[]) {
