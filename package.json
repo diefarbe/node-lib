@@ -1,9 +1,20 @@
 {
   "name": "das",
+  "description": "NodeJS library for connecting to the DasKeyboard 5Q",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": "Steven Bird",
+  "contributors": [
+    "Mike Gardner <mikejr83@gmail.com>"
+  ],
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
   "license": "GPL v3",
   "scripts": {
+    "build": "tsc",
+
+    "lint": "tslint -p ./",
+
+    "test": "echo \"Ya we probably need to have some unit tests...\""
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
   },
@@ -13,6 +24,8 @@
   "devDependencies": {
     "@types/node": "^10.5.1",
     "@types/usb": "^1.1.6",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2",
     "ts-node": "^7.0.0",
     "nodemon": "^1.17.5",
