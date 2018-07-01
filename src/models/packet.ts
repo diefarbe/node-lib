@@ -1,3 +1,3 @@
 export abstract class Packet {
-	public abstract buildPacketBytes(): number[];
+    public abstract buildPacketBytes(): number[];
 }
