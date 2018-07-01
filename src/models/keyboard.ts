@@ -22,7 +22,7 @@ export class Keyboard {
 
   public find(): HID {
     const device = devices().find((d: Device) => {
-      return d.vendorId == this.vendorId && d.productId == this.productId;
+      return d.vendorId == this.vendorId && d.productId == this.productId && d.interface == this.interface;
     });
 
     if (device === undefined) {
@@ -113,8 +113,7 @@ export class Keyboard {
     buff[3] = this.sequence;
     this.hidDevice.sendFeatureReport(buff);
     let res = this.hidDevice.getFeatureReport(0, 65);
-    console.log(res);
-    if (res[1] != 0x14 || res[2] != this.sequence) {
+    if (res[2] != 0x14 || res[3] != this.sequence) {
       throw new Error("no ack");
     }
   }

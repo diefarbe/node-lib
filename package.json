@@ -14,10 +14,8 @@
     "clean": "rimraf ./dist",
     "lint": "tslint -p ./",
     "poc-ts": "ts-node --project tsconfig.json POC/ts/index.ts",
-    "poc-ts-dev": "nodemon --exec ./node_modules/.bin/ts-node -- ./ts/hdiapi.ts",
     "prebuild": "npm-run-all clean",
-    "test": "echo \"Ya we probably need to have some unit tests...\"",
-    "start": "npm run poc-ts-dev"
+    "test": "echo \"Ya we probably need to have some unit tests...\""
   },
   "dependencies": {
     "node-hid": "^0.7.2"
