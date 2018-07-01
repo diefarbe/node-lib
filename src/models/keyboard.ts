@@ -35,6 +35,9 @@ export class Keyboard {
 	    */
     public find(): HID {
         const device = devices().find((d: Device) => {
+            if (process.platform === "darwin") {
+              return d.vendorId === this.vendorId && d.productId === this.productId && d.usage === 165;
+            }
             return d.vendorId === this.vendorId && d.productId === this.productId && d.interface === this.interface;
         });
         
@@ -150,6 +153,9 @@ export class Keyboard {
         buff[3] = this.sequence;
         this.hidDevice.sendFeatureReport(buff);
         const res = this.hidDevice.getFeatureReport(0, 65);
+        if (process.platform === "darwin") {
+          res.unshift(0);
+        }
         if (res[2] !== 0x14 || res[3] !== this.sequence) {
             throw new Error("no ack");
         }
