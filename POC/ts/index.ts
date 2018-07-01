@@ -29,7 +29,6 @@ keyboard.setRgbHex(Keys.SPACE, 0xFF00FF);
  */
 keyboard.apply();
 
-
 /*
  * Clean up!
  */
