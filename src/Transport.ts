@@ -8,7 +8,7 @@ export function readData(device: Device) {
             } else {
                 resolve(data);
             }
-        })
+        });
     });
 }
 
@@ -21,16 +21,16 @@ export function sendData(device: Device, data: Buffer) {
                 resolve();
             }
         });
-    })
+    });
 }
 
 export async function sendAndConfirm(device: Device, data: Buffer) {
 
     await sendData(device, data);
-    let returnedData = await readData(device);
+    const returnedData = await readData(device);
 
     if (typeof returnedData !== "undefined") {
-        let valid = [...returnedData][1]
+        const valid = [...returnedData][1]
         if (valid !== 20) {
             throw new Error("Failed to send data");
         }
