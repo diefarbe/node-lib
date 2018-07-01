@@ -1,4 +1,14 @@
 import {Device, devices, HID} from "node-hid";
+import {Packet} from "./packet";
+import {ColorPacket} from "./color-packet";
+
+export type Key = {id: number, r: number, g: number, b: number};
+
+// maps a key name to its ID and channel
+export const Keys = {
+	SPACE: {id: 151, r: 0, g: 1, b: 2},
+	// TODO
+};
 
 export class Keyboard {
 	private interface: number;
@@ -18,6 +28,11 @@ export class Keyboard {
 		this.interface = deviceInterface || 2;
 	}
 	
+	/**
+	 * Finds and connects to the keyboard. It also returns the HID, but this is probably useless.
+	 * 
+	 * @returns {HID}
+	 */
 	public find(): HID {
 		const device = devices().find((d: Device) => {
 			return d.vendorId == this.vendorId && d.productId == this.productId && d.interface == this.interface;
@@ -38,6 +53,9 @@ export class Keyboard {
 		return this.hidDevice;
 	}
 	
+	/**
+	 * Initializes the keyboard so we can communicate with it.
+	 */
 	public initialize() {
 		if (this.hidDevice === undefined) {
 			this.find();
@@ -54,37 +72,54 @@ export class Keyboard {
 		this.isInitialized = true;
 	}
 	
-	setRgb(key: number, r: number, g: number, b: number) {
-		if (!this.isInitialized) {
-			throw new Error("The HID keyboard device is not initialized");
-		}
-		
-		const channelgroups =
-			"0000000000000000000000000" +
-			"000000000111111122222222" +
-			"00000000011111122222222" +
-			"0000000001111111111222222" +
-			"00000000011111122222222" +
-			"0000000000111111122222222" +
-			"000000000011111122222222" +
-			"0000000000000000000000000";
-		
-		const red = [0, 1, 2];
-		const green = [1, 2, 0];
-		const blue = [2, 0, 1];
-		
-		let channelgroup = Number.parseInt(channelgroups.charAt(key)) & 3;
-		this.setKeyChannel(key, red[channelgroup], r);
-		this.setKeyChannel(key, green[channelgroup], g);
-		this.setKeyChannel(key, blue[channelgroup], b);
+	/**
+	 * Sends a key color modification command.
+	 * 
+	 * @param {Key} key the key you want to change
+	 * @param {number} r the red value (0x00 - 0xFF)
+	 * @param {number} g the green value (0x00 - 0xFF)
+	 * @param {number} b the blue value (0x00 - 0xFF)
+	 */
+	public setRgb(key: Key, r: number, g: number, b: number) {
+		this.executePacket(new ColorPacket(key.id, key.r, r));
+		this.executePacket(new ColorPacket(key.id, key.g, g));
+		this.executePacket(new ColorPacket(key.id, key.b, b));
 	}
 	
+	/**
+	 * Same as setRgb(), but accepts a full hex code.
+	 * 
+	 * @param {Key} key the key you want to change
+	 * @param {string | number} rgb the red, green, and blue values (0x000000 - 0xFFFFFF)
+	 */
+	public setRgbHex(key: Key, rgb: string | number) {
+		// this could probably be optimized, but oh well
+		if (typeof rgb == "string") {
+			this.setRgb(key,
+				parseInt(rgb.substr(0, 2), 16),
+				parseInt(rgb.substr(2, 4), 16),
+				parseInt(rgb.substr(4, 6), 16));
+		} else {
+			rgb = rgb.toString(16);
+			this.setRgb(key,
+				parseInt(rgb.substr(0, 2), 16),
+				parseInt(rgb.substr(2, 4), 16),
+				parseInt(rgb.substr(4, 6), 16));
+		}
+	}
+	
+	/**
+	 * Executes any pending color commands on the keyboard.
+	 */
 	public apply() {
 		this.featureReports([0, 0x2d, 0, 0x0f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
 			0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
 			0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,]);
 	}
 	
+	/**
+	 * Disconnects from the keyboard.
+	 */
 	public close() {
 		if (this.hidDevice === undefined) {
 			throw new Error("");
@@ -96,6 +131,10 @@ export class Keyboard {
 		this.hidDevice = undefined;
 		
 		this.isInitialized = false;
+	}
+	
+	private executePacket(packet: Packet) {
+		this.featureReports(packet.buildPacketBytes());
 	}
 	
 	private featureReports(report: number[]) {
@@ -114,12 +153,5 @@ export class Keyboard {
 		if (res[2] != 0x14 || res[3] != this.sequence) {
 			throw new Error("no ack");
 		}
-	}
-	
-	private setKeyChannel(key: number, channel: number, value: number) {
-		this.featureReports([
-			0, 0x28, 0, channel, 1, key, 2, value, 0, (value < 12 ? 1 : value / 12), 0, 5, 0, value, 0, 0,
-			0, 0, 0, (value < 12 ? 1 : value / 12), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0x40,
-		]);
 	}
 }

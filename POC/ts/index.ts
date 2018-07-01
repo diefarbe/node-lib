@@ -1,4 +1,4 @@
-import {Keyboard} from "../../src";
+import {Keyboard, Keys} from "../../src";
 
 // Ok. Let's create a keyboard
 // This will be done with the default values for USB vendor, product, and interface
@@ -20,7 +20,9 @@ keyboard.initialize();
 /*
  * Let's set some color!
  */
-keyboard.setRgb(151, 0x00, 0xFF, 0xFF);
+keyboard.setRgb(Keys.SPACE, 0xFF, 0xFF, 0xFF);
+keyboard.setRgb(Keys.SPACE, 0xFF, 0x00, 0xFF);
+keyboard.setRgbHex(Keys.SPACE, 0xFF00FF);
 
 /*
  * Great! Apply our changes!

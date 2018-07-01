@@ -1,31 +1,26 @@
 import {Packet} from "./packet";
 
 export class ColorPacket extends Packet {
-	constructor(private key: number, private color: number, private seq?: number) {
+	constructor(private key: number, private channel: number, private color: number) {
 		super();
 	}
 	
-	public buildPacketBytes(seq?: number): number[] {
-		const theSeq = this.seq || seq;
-		if (theSeq === undefined) {
-			throw new Error("SEQ must be defined!");
-		}
-		
+	public buildPacketBytes(): number[] {
 		return [
 			0x00,
 			0x28,
-			0x00, // something is here in the original packets
-			theSeq,
+			0x00,
+			this.channel,
 			0x01,
 			this.key,
 			0x02, /* 0x00 = off, 0x01 = stop animation, 0x02 = start animation */
+			this.color, /* fade too */
+			0x00,
+			0xFF, /* animation speed; 0x00 = slowest, 0xFF = fastest */
 			0x00,
 			0x00,
 			0x00,
-			0x00,
-			0x00,
-			0x00,
-			this.color,
+			this.color, /* fade from */
 			0x00,
 			0x00,
 			0x00,
