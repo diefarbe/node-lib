@@ -10,6 +10,7 @@
     },
     "jsRules": {},
     "rules": {
+        "indent": [true, "spaces", 4],
         "trailing-comma": [
             false
         ],
