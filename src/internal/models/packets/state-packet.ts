@@ -5,6 +5,7 @@ export class StatePacket extends Packet {
   constructor(
     private key: number,
     private colorChannelId: number,
+    private effectFlag: EffectFlag,
 
     private upHoldLevel?: number,
     private downHoldLevel?: number,
@@ -23,7 +24,6 @@ export class StatePacket extends Packet {
 
     private startDelay?: number,
 
-    private effectFlag: EffectFlag = new EffectFlag(),
 
     private effectId?: number,
   ) {

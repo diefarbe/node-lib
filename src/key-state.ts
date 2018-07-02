@@ -1,5 +1,6 @@
 import { KeyModel } from "./internal/models/key-model";
 import { StatePacket } from "./internal/models/packets/state-packet";
+import { EffectFlag } from "./internal/models/packets/utils/effect-flag";
 
 export class KeyState {
 
@@ -19,10 +20,10 @@ export class KeyState {
     private downDecrementDelay?: number;
 
     private startDelay?: number;
-    private effectFlag?: number;
     private effectId?: number;
 
     private keyInfo: KeyModel;
+    private effectFlag: EffectFlag = new EffectFlag();
 
     constructor(
         keyInfo: KeyModel,
@@ -105,6 +106,36 @@ export class KeyState {
         return this;
     }
 
+    public setMoveUp() {
+        this.effectFlag.setIncrementOnly();
+        return this;
+    }
+
+    public setMoveDown() {
+        this.effectFlag.setIncrementOnly();
+        return this;
+    }
+
+    public setTransition() {
+        this.effectFlag.setDecrementIncrement();
+        return this;
+    }
+
+    public setTransitionReverse() {
+        this.effectFlag.setIncrementDecrement();
+        return this;
+    }
+
+    public setApplyImmediately() {
+        this.effectFlag.setTriggerEffectNow();
+        return this;
+    }
+
+    public setApplyDelayed() {
+        this.effectFlag.setTriggerEffectNow();
+        return this;
+    }
+
     public build(): number[][] {
 
         const packetsToSend = [];
@@ -119,6 +150,7 @@ export class KeyState {
             packetsToSend.push(new StatePacket(
                 this.keyInfo.id,
                 colorChannels[i],
+                this.effectFlag,
                 typeof this.toColorRGB === "undefined" ? undefined : this.toColorRGB[i],
                 typeof this.fromColorRGB === "undefined" ? undefined : this.fromColorRGB[i],
                 typeof this.upMaximumLevel === "undefined" ? undefined : this.upMaximumLevel[i],

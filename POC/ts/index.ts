@@ -29,6 +29,7 @@ keyboard.set(
         .setDownDecrement(100)
         .setUpIncrement(100)
         .setUpMaximum("#000000")
+        .setTransition()
 );
 
 /*
