@@ -1,7 +1,7 @@
-import { Device, devices, HID } from "node-hid";
+import {Device, devices, HID} from "node-hid";
 
-import { Key } from "./key";
-import { Packet } from "./packet";
+import {Key} from "./key";
+import {Packet} from "./packet";
 
 export class Keyboard {
   private interface: number;
@@ -22,10 +22,10 @@ export class Keyboard {
   }
 
   /**
-	  * Finds and connects to the keyboard. It also returns the HID, but this is probably useless.
-	  * 
-	  * @returns {HID}
-	  */
+   * Finds and connects to the keyboard. It also returns the HID, but this is probably useless.
+   *
+   * @returns {HID}
+   */
   public find(): HID {
     const device = devices().find((d: Device) => {
       if (process.platform === "darwin") {
@@ -51,8 +51,8 @@ export class Keyboard {
   }
 
   /**
-	  * Initializes the keyboard so we can communicate with it.
-	  */
+   * Initializes the keyboard so we can communicate with it.
+   */
   public initialize() {
     if (this.hidDevice === undefined) {
       this.find();
@@ -70,13 +70,13 @@ export class Keyboard {
   }
 
   /**
-	  * Sends a key color modification command.
-	  * 
-	  * @param {Key} key the key you want to change
-	  * @param {number} r the red value (0x00 - 0xFF)
-	  * @param {number} g the green value (0x00 - 0xFF)
-	  * @param {number} b the blue value (0x00 - 0xFF)
-	  */
+   * Sends a key color modification command.
+   *
+   * @param {Key} key the key you want to change
+   * @param {number} r the red value (0x00 - 0xFF)
+   * @param {number} g the green value (0x00 - 0xFF)
+   * @param {number} b the blue value (0x00 - 0xFF)
+   */
   public setRgb(key: Key, r: number, g: number, b: number) {
     for (const packet of key.withColor(r, g, b).toPackets()) {
       this.executePacket(packet);
@@ -84,30 +84,42 @@ export class Keyboard {
   }
 
   /**
-	  * Same as setRgb(), but accepts a full hex code.
-	  * 
-	  * @param {Key} key the key you want to change
-	  * @param {string | number} rgb the red, green, and blue values (0x000000 - 0xFFFFFF)
-	  */
+   * Same as setRgb(), but accepts a full hex code.
+   *
+   * @param {Key} key the key you want to change
+   * @param {string | number} rgb the red, green, and blue values (0x000000 - 0xFFFFFF)
+   */
   public setRgbHex(key: Key, rgb: string | number) {
     // this could probably be optimized, but oh well
     if (typeof rgb === "string") {
+      if (rgb.length != 6) {
+        throw new Error("Length should be 6");
+      }
       this.setRgb(key,
         parseInt(rgb.substr(0, 2), 16),
-        parseInt(rgb.substr(2, 4), 16),
-        parseInt(rgb.substr(4, 6), 16));
+        parseInt(rgb.substr(2, 2), 16),
+        parseInt(rgb.substr(4, 2), 16));
     } else {
-      rgb = rgb.toString(16);
+      if (rgb < 0x000000) {
+        throw new Error("Color cannot be less than zero");
+      }
+      if (rgb > 0xFFFFFF) {
+        throw new Error("Color cannot be greater than 0xFFFFFF");
+      }
+      let newRgb = rgb.toString(16);
+      while (newRgb.length < 6) {
+        newRgb = "0" + newRgb;
+      }
       this.setRgb(key,
-        parseInt(rgb.substr(0, 2), 16),
-        parseInt(rgb.substr(2, 4), 16),
-        parseInt(rgb.substr(4, 6), 16));
+        parseInt(newRgb.substr(0, 2), 16),
+        parseInt(newRgb.substr(2, 2), 16),
+        parseInt(newRgb.substr(4, 2), 16));
     }
   }
 
   /**
-	  * Executes any pending color commands on the keyboard.
-	  */
+   * Executes any pending color commands on the keyboard.
+   */
   public apply() {
     this.featureReports([0, 0x2d, 0, 0x0f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
       0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
@@ -115,19 +127,17 @@ export class Keyboard {
   }
 
   /**
-	  * Disconnects from the keyboard.
-	  */
+   * Disconnects from the keyboard. Does nothing if already disconnected or not initialized.
+   */
   public close() {
-    if (this.hidDevice === undefined) {
-      throw new Error("");
+    if (this.hidDevice !== undefined) {
+      this.hidDevice.close();
+
+      this.device = undefined;
+      this.hidDevice = undefined;
+
+      this.isInitialized = false;
     }
-
-    this.hidDevice.close();
-
-    this.device = undefined;
-    this.hidDevice = undefined;
-
-    this.isInitialized = false;
   }
 
   private executePacket(packet: Packet) {
@@ -151,7 +161,7 @@ export class Keyboard {
       res.unshift(0);
     }
     if (res[2] !== 0x14 || res[3] !== this.sequence) {
-      throw new Error("no ack");
+      throw new Error("no ack " + this.sequence);
     }
   }
 }

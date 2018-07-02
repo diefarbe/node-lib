@@ -10,7 +10,7 @@ export class Color {
     return [
       new ColorPacket(keyId, this.red.id, this.red.value),
       new ColorPacket(keyId, this.green.id, this.green.value),
-      new ColorPacket(keyId, this.blue.id, this.blue.id)
+      new ColorPacket(keyId, this.blue.id, this.blue.value)
     ];
   }
 }
