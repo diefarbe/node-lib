@@ -36,9 +36,9 @@ export class StatePacket extends Packet {
     const upHoldLevel = this.upHoldLevel || 0;
     const upHoldDelay = this.upHoldDelay || 0;
     const upIncrement = this.upIncrement || 0;
-    const upIncrementDelay = this.upIncrementDelay || 1;
+    const upIncrementDelay = this.upIncrementDelay || 0;
     const downMinimumLevel = this.downMinimumLevel || 0;
-    const downHoldLevel = this.downHoldLevel || 0x20;
+    const downHoldLevel = this.downHoldLevel || 0;
     const downHoldDelay = this.downHoldDelay || 0;
     const downDecrement = this.downDecrement || 0;
     const downDecrementDelay = this.downDecrementDelay || 0;

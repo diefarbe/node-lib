@@ -112,7 +112,7 @@ export class KeyState {
     }
 
     public setMoveDown() {
-        this.effectFlag.setIncrementOnly();
+        this.effectFlag.setDecrementOnly();
         return this;
     }
 
