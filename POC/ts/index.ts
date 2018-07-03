@@ -18,7 +18,7 @@ const hidDevice = keyboard.find();
  */
 keyboard.initialize();
 
-sparkle();
+sparkleBatch();
 
 /*
  * Let's set some color!
@@ -84,6 +84,32 @@ function sparkle() {
     }
 
     keyboard.apply();
+  }
+}
+
+function sparkleBatch() {
+  const keys = Object.keys(KeyInfo["en-US"]);
+  let currentKeys: KeyModel[] = [];
+  while (true) {
+    const chosenKey = keys[Math.floor(Math.random() * keys.length)];
+    const key = KeyInfo["en-US"][chosenKey];
+    const color = Math.floor(Math.random() * 3);
+    if (color === 0) {
+      keyboard.set(new KeyState(key).setToColorHex("#FF0000"));
+    } else if (color === 1) {
+      keyboard.set(new KeyState(key).setToColorHex("#00FF00"));
+    } else if (color === 2) {
+      keyboard.set(new KeyState(key).setToColorHex("#0000FF"));
+    } else {
+      throw new Error("should never happen");
+    }
+    keyboard.apply();
+    currentKeys.push(key);
+
+    if (currentKeys.length > 10) {
+      keyboard.set(new KeyState(currentKeys.splice(0, 1)[0]).setToColorHex("#000000"));
+      keyboard.apply();
+    }
   }
 }
 
