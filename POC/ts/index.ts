@@ -72,11 +72,11 @@ function sparkle() {
     let key = KeyInfo[chosenKey];
     let color = Math.floor(Math.random() * 3);
     if (color == 0) {
-      keyboard.set(new KeyState(key).setFromColorHex("FF0000").setToColorHex("FF0000"));
+      keyboard.set(new KeyState(key).setToColorHex("#FF0000"));
     } else if (color == 1) {
-      keyboard.set(new KeyState(key).setFromColorHex("00FF00").setToColorHex("00FF00"));
+      keyboard.set(new KeyState(key).setToColorHex("#00FF00"));
     } else if (color == 2) {
-      keyboard.set(new KeyState(key).setFromColorHex("0000FF").setToColorHex("0000FF"));
+      keyboard.set(new KeyState(key).setToColorHex("#0000FF"));
     } else {
       throw new Error("should never happen")
     }
