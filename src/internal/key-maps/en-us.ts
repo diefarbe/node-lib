@@ -297,7 +297,7 @@ export const enUS = {
     x: 50.29,
     y: 47.25
   }, 4.28, 13.5, 0, 1, 2),
-  return: new KeyModel([111], "return", "&crarr;", {
+  return: new KeyModel([110, 111], "return", "&crarr;", {
     x: 54.57,
     y: 47.25
   }, 9.63, 13.5, 0, 1, 2),
@@ -357,7 +357,7 @@ export const enUS = {
     x: 48.15,
     y: 61.75
   }, 4.28, 13.5, 0, 1, 2),
-  shiftRight: new KeyModel([135], "shiftRight", "&#8679;-R", {
+  shiftRight: new KeyModel([134, 135], "shiftRight", "&#8679;-R", {
     x: 52.43,
     y: 61.75
   }, 11.77, 13.5, 0, 1, 2),
