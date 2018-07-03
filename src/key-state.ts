@@ -143,22 +143,24 @@ export class KeyState {
         const colorChannels = this.keyInfo.getRGBChannels();
 
         for (let i = 0; i < 3; i++) {
-            packetsToSend.push(new StatePacket(
-                this.keyInfo.id,
-                colorChannels[i],
-                this.effectFlag,
-                typeof this.toColorRGB === "undefined" ? undefined : this.toColorRGB[i],
-                typeof this.fromColorRGB === "undefined" ? undefined : this.fromColorRGB[i],
-                typeof this.upMaximumLevel === "undefined" ? undefined : this.upMaximumLevel[i],
-                typeof this.downMinimumLevel === "undefined" ? undefined : this.downMinimumLevel[i],
-                this.upHoldDelay,
-                this.downHoldDelay,
-                this.upIncrement,
-                this.downDecrement,
-                this.upIncrementDelay,
-                this.downDecrementDelay,
-                this.startDelay
-            ).buildPacketBytes());
+            for (const ledId of this.keyInfo.ledIds) {
+                packetsToSend.push(new StatePacket(
+                    ledId,
+                    colorChannels[i],
+                    this.effectFlag,
+                    typeof this.toColorRGB === "undefined" ? undefined : this.toColorRGB[i],
+                    typeof this.fromColorRGB === "undefined" ? undefined : this.fromColorRGB[i],
+                    typeof this.upMaximumLevel === "undefined" ? undefined : this.upMaximumLevel[i],
+                    typeof this.downMinimumLevel === "undefined" ? undefined : this.downMinimumLevel[i],
+                    this.upHoldDelay,
+                    this.downHoldDelay,
+                    this.upIncrement,
+                    this.downDecrement,
+                    this.upIncrementDelay,
+                    this.downDecrementDelay,
+                    this.startDelay
+                ).buildPacketBytes());
+            }
         }
 
         return packetsToSend;

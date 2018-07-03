@@ -120,7 +120,7 @@ export class Keyboard {
       buff.push(0);
     }
     this.sequence++;
-    if (this.sequence > 0xFF) this.sequence = 0x00; 
+    if (this.sequence > 0xFF) { this.sequence = 0x00; }
     buff[3] = this.sequence;
     this.hidDevice.sendFeatureReport(buff);
     const res = this.hidDevice.getFeatureReport(0, 65);

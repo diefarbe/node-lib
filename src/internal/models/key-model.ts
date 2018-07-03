@@ -1,3 +1,8 @@
+export interface ICoordinate {
+    x: number;
+    y: number;
+}
+
 /**
  * Representation of a key with color channel info
  *
@@ -6,7 +11,12 @@
  */
 export class KeyModel {
     constructor(
-        public id: number,
+        public ledIds: number[],
+        public description: string,
+        public shortName: string,
+        public topLeftCoordinates: ICoordinate,
+        public width: number, 
+        public height: number,
         public rChannelId: number,
         public gChannelId: number,
         public bChannelId: number
