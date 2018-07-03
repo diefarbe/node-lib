@@ -65,15 +65,15 @@ export const enUS = {
     x: 73.83,
     y: 0
   }, 4.28, 13.5, 0, 1, 2),
-  Macro1: new KeyModel([43], "Macro1", "M1", {
+  Macro1: new KeyModel([43, 18], "Macro1", "M1", {
     x: 80.564,
     y: 1
   }, 3.4, 11.88, 0, 1, 2),
-  Macro2: new KeyModel([44], "Macro2", "M2", {
+  Macro2: new KeyModel([44, 19], "Macro2", "M2", {
     x: 83.85,
     y: 1
   }, 3.4, 11.88, 0, 1, 2),
-  Macro3: new KeyModel([45], "Macro3", "M3", {
+  Macro3: new KeyModel([45, 20], "Macro3", "M3", {
     x: 86.75,
     y: 1
   }, 3.4, 11.88, 0, 1, 2),
