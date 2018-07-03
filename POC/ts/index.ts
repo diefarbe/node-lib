@@ -18,8 +18,6 @@ const hidDevice = keyboard.find();
  */
 keyboard.initialize();
 
-sparkle();
-
 /*
  * Let's set some color!
  */
