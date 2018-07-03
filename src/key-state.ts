@@ -143,10 +143,6 @@ export class KeyState {
         const colorChannels = this.keyInfo.getRGBChannels();
 
         for (let i = 0; i < 3; i++) {
-            if (typeof this.fromColorRGB !== "undefined") {
-                console.log(this.fromColorRGB[i]);
-
-            }
             packetsToSend.push(new StatePacket(
                 this.keyInfo.id,
                 colorChannels[i],

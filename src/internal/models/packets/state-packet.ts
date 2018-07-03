@@ -80,8 +80,7 @@ export class StatePacket extends Packet {
     // 30
     buffer.writeUInt16LE(this.effectFlag.value, 31);
     // 32
-
-    console.log([...buffer]);
+    
     return [...buffer];
   }
 }
