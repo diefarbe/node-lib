@@ -88,9 +88,9 @@ function sparkle() {
 }
 
 function allColor(hexColor: string) {
-  let keys = Object.keys(KeyInfo["en-US"]);
-  for (let keyName of keys) {
-    let key = KeyInfo["en-US"][keyName];
+  const keys = Object.keys(KeyInfo["en-US"]);
+  for (const keyName of keys) {
+    const key = KeyInfo["en-US"][keyName];
     keyboard.set(new KeyState(key).setToColorHex(hexColor));
   }
   keyboard.apply();
