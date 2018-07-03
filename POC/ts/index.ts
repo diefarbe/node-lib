@@ -84,6 +84,15 @@ function sparkle() {
   }
 }
 
+function allColor(hexColor: string) {
+  let keys = Object.keys(KeyInfo);
+  for (let keyName of keys) {
+    let key = KeyInfo[keyName];
+    keyboard.set(new KeyState(key).setToColorHex(hexColor));
+  }
+  keyboard.apply();
+}
+
 function sleep(sleepDuration: number) {
   let now = new Date().getTime();
   while (new Date().getTime() < now + sleepDuration) {
