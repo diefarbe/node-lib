@@ -145,7 +145,7 @@ export class KeyState {
         for (let i = 0; i < 3; i++) {
             for (const ledId of this.keyInfo.ledIds) {
                 packetsToSend.push(new StatePacket(
-                    ledId,
+                    ledId.id,
                     colorChannels[i],
                     this.effectFlag,
                     typeof this.toColorRGB === "undefined" ? undefined : this.toColorRGB[i],

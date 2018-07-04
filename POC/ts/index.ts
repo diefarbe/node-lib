@@ -18,7 +18,8 @@ const hidDevice = keyboard.find();
  */
 keyboard.initialize();
 
-sparkleBatch();
+// sparkleBatch();
+allColor("#0000FF");
 
 /*
  * Let's set some color!
@@ -68,10 +69,9 @@ function testKey(key: KeyModel) {
 }
 
 function sparkle() {
-  const keys = Object.keys(KeyInfo["en-US"]);
+  const keys = KeyInfo["en-US"];
   while (true) {
-    const chosenKey = keys[Math.floor(Math.random() * keys.length)];
-    const key = KeyInfo["en-US"][chosenKey];
+    const key = keys[Math.floor(Math.random() * keys.length)];
     const color = Math.floor(Math.random() * 3);
     if (color === 0) {
       keyboard.set(new KeyState(key).setToColorHex("#FF0000"));
@@ -88,11 +88,10 @@ function sparkle() {
 }
 
 function sparkleBatch() {
-  const keys = Object.keys(KeyInfo["en-US"]);
-  let currentKeys: KeyModel[] = [];
+  const keys = KeyInfo["en-US"];
+  const currentKeys: KeyModel[] = [];
   while (true) {
-    const chosenKey = keys[Math.floor(Math.random() * keys.length)];
-    const key = KeyInfo["en-US"][chosenKey];
+    const key = keys[Math.floor(Math.random() * keys.length)];
     const color = Math.floor(Math.random() * 3);
     if (color === 0) {
       keyboard.set(new KeyState(key).setToColorHex("#FF0000"));
@@ -114,9 +113,8 @@ function sparkleBatch() {
 }
 
 function allColor(hexColor: string) {
-  const keys = Object.keys(KeyInfo["en-US"]);
-  for (const keyName of keys) {
-    const key = KeyInfo["en-US"][keyName];
+  const keys = KeyInfo["en-US"];
+  for (const key of keys) {
     keyboard.set(new KeyState(key).setToColorHex(hexColor));
   }
   keyboard.apply();
