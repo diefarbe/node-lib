@@ -6,7 +6,7 @@
   "contributors": [
     "Mike Gardner <mikejr83@gmail.com>",
     "Chris Smith <chris@hichris.com>",
-    "Steven Bird"
+    "Stephen Bird <sebirdman@gmail.com>"
   ],
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
