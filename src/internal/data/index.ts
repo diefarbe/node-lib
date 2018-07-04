@@ -1,9 +1,13 @@
 import { IKeyModel, KeyModel } from "../models/key-model";
 
-import enKeymapData from "./en-us.json";
+import enData from "./en-us.json";
 
-export const enKeyMapData: KeyModel[] = [];
+export interface IKeyMapCulture {
+  [keyName: string]: KeyModel;
+}
 
-for (const keymapping of (enKeymapData as IKeyModel[])) {
-  enKeyMapData.push(new KeyModel(keymapping));
+export const enKeyMapData: IKeyMapCulture = {};
+
+for (const keymapping of (enData as IKeyModel[])) {
+  enKeyMapData[keymapping.shortName] = new KeyModel(keymapping);
 }
