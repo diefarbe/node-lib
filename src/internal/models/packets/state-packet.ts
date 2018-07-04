@@ -1,6 +1,9 @@
 import { Packet } from "./packet";
 import { EffectFlag } from "./utils/effect-flag";
 
+/**
+ * Changes Key States
+ */
 export class StatePacket extends Packet {
   constructor(
     private key: number,
@@ -23,7 +26,6 @@ export class StatePacket extends Packet {
     private downDecrementDelay?: number,
 
     private startDelay?: number,
-
 
     private effectId?: number,
   ) {

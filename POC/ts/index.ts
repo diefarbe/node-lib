@@ -20,6 +20,10 @@ keyboard.initialize();
 
 allColor("#FF0000");
 // sparkle();
+const data = keyboard.getFirmwareVersion();
+console.log("Firmware Version:" + data);
+keyboard.setBrightness(63);
+
 // sparkleBatch();
 
 /*
@@ -54,16 +58,16 @@ testKey(new Key(5, 0, 1, 2));
  */
 function testKey(key: KeyModel) {
   while (true) {
-    keyboard.set(new KeyState(key).setFromColorHex("FF0000").setToColorHex("FF0000"));
+    keyboard.setKeyState(new KeyState(key).setFromColorHex("FF0000").setToColorHex("FF0000"));
     keyboard.apply();
     sleep(300);
-    keyboard.set(new KeyState(key).setFromColorHex("00FF00").setToColorHex("00FF00"));
+    keyboard.setKeyState(new KeyState(key).setFromColorHex("00FF00").setToColorHex("00FF00"));
     keyboard.apply();
     sleep(300);
-    keyboard.set(new KeyState(key).setFromColorHex("0000FF").setToColorHex("0000FF"));
+    keyboard.setKeyState(new KeyState(key).setFromColorHex("0000FF").setToColorHex("0000FF"));
     keyboard.apply();
     sleep(300);
-    keyboard.set(new KeyState(key).setFromColorHex("000000").setToColorHex("000000"));
+    keyboard.setKeyState(new KeyState(key).setFromColorHex("000000").setToColorHex("000000"));
     keyboard.apply();
     sleep(1000);
   }
@@ -76,11 +80,11 @@ function sparkle() {
     const key = KeyInfo["en-US"][chosenKey];
     const color = Math.floor(Math.random() * 3);
     if (color === 0) {
-      keyboard.set(new KeyState(key).setToColorHex("#FF0000"));
+      keyboard.setKeyState(new KeyState(key).setToColorHex("#FF0000"));
     } else if (color === 1) {
-      keyboard.set(new KeyState(key).setToColorHex("#00FF00"));
+      keyboard.setKeyState(new KeyState(key).setToColorHex("#00FF00"));
     } else if (color === 2) {
-      keyboard.set(new KeyState(key).setToColorHex("#0000FF"));
+      keyboard.setKeyState(new KeyState(key).setToColorHex("#0000FF"));
     } else {
       throw new Error("should never happen");
     }
@@ -97,11 +101,11 @@ function sparkleBatch() {
     const key = KeyInfo["en-US"][chosenKey];
     const color = Math.floor(Math.random() * 3);
     if (color === 0) {
-      keyboard.set(new KeyState(key).setToColorHex("#FF0000"));
+      keyboard.setKeyState(new KeyState(key).setToColorHex("#FF0000"));
     } else if (color === 1) {
-      keyboard.set(new KeyState(key).setToColorHex("#00FF00"));
+      keyboard.setKeyState(new KeyState(key).setToColorHex("#00FF00"));
     } else if (color === 2) {
-      keyboard.set(new KeyState(key).setToColorHex("#0000FF"));
+      keyboard.setKeyState(new KeyState(key).setToColorHex("#0000FF"));
     } else {
       throw new Error("should never happen");
     }
@@ -109,7 +113,7 @@ function sparkleBatch() {
     currentKeys.push(key);
 
     if (currentKeys.length > 10) {
-      keyboard.set(new KeyState(currentKeys.splice(0, 1)[0]).setToColorHex("#000000"));
+      keyboard.setKeyState(new KeyState(currentKeys.splice(0, 1)[0]).setToColorHex("#000000"));
       keyboard.apply();
     }
   }
@@ -119,7 +123,7 @@ function allColor(hexColor: string) {
   const keys = Object.keys(KeyInfo["en-US"]);
   for (const keyName of keys) {
     const key = KeyInfo["en-US"][keyName];
-    keyboard.set(new KeyState(key).setToColorHex(hexColor));
+    keyboard.setKeyState(new KeyState(key).setToColorHex(hexColor));
   }
   keyboard.apply();
 }
