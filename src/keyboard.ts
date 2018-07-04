@@ -76,10 +76,13 @@ export class Keyboard {
     this.featureReports(new TriggerPacket().buildPacketBytes());
   }
 
-  public getFirmwareVersion() {
+  public getKeyboardData() {
     this.featureReports(new FirmwarePacket().buildPacketBytes());
     const fwVer = this.readDataFromDevice();
-    return fwVer[3] + "." + fwVer[4] + "." + fwVer[5] + "." +  fwVer[6] + "." +  fwVer[7];
+    return {
+      firmware: fwVer[4] + "." + fwVer[5] + "." +  fwVer[6] + "." +  fwVer[7],
+      packetCount: fwVer[3],
+    };
   }
 
   /**

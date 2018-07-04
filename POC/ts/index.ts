@@ -22,8 +22,8 @@ allColor("#FF0000");
 allColor("#0000FF");
 
 // sparkle();
-const data = keyboard.getFirmwareVersion();
-console.log("Firmware Version:" + data);
+const data = keyboard.getKeyboardData();
+console.log("Firmware Version:" + data.firmware);
 keyboard.setBrightness(63);
 
 // sparkleBatch();
