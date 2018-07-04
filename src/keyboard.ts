@@ -4,28 +4,21 @@ import { FreezePacket } from "./internal/models/packets/freeze-packet";
 import { InitializePacket } from "./internal/models/packets/initialize-packet";
 import { TriggerPacket } from "./internal/models/packets/trigger-packet";
 import { KeyState } from "./key-state";
-import { USBHID } from "./usb/hid";
-import { Usb } from "./usb/usb";
+
+import { findUsbDevice, Usb } from "./usb";
 
 export class Keyboard {
-  private interface: number;
-  private vendorId: number;
-  private productId: number;
-  private usage: number;
-
   private usbDevice: Usb | undefined;
   private sequence: number = 0;
 
-  constructor(vendorId?: number, productId?: number, deviceInterface?: number, usage?: number) {
-    this.vendorId = vendorId || 0x24f0;
-    this.productId = productId || 0x2020;
-    this.interface = deviceInterface || 2;
-    this.usage = usage || 165;
-  }
+  public find(vendorId?: number, productId?: number, deviceInterface?: number, usage?: number): Usb {
+    this.usbDevice = findUsbDevice(vendorId || 0x24f0,
+      productId || 0x2020,
+      deviceInterface || 2,
+      usage || 165);
 
-  public find(): Usb {
-    this.usbDevice = new USBHID();
-    this.usbDevice.connect(this.vendorId, this.productId, this.interface, this.usage);
+    this.usbDevice.connect();
+
     return this.usbDevice;
   }
 
@@ -80,7 +73,7 @@ export class Keyboard {
     this.featureReports(new FirmwarePacket().buildPacketBytes());
     const fwVer = this.readDataFromDevice();
     return {
-      firmware: fwVer[4] + "." + fwVer[5] + "." +  fwVer[6] + "." +  fwVer[7],
+      firmware: fwVer[4] + "." + fwVer[5] + "." + fwVer[6] + "." + fwVer[7],
       packetCount: fwVer[3],
     };
   }

@@ -9,6 +9,10 @@ const keyboard = new Keyboard();
  * Now, this actually finds the keyboard. Internally the keyboard object will track
  * the device, but if you really want access to the low-level HID device this will 
  * return it.
+ * 
+ * NOTE: THE FIND METHOD CAN TAKE THE VENDOR AND PRODUCT IDS ALONG WITH A HOST OF USB
+ * INFO TO MAKE THE CONNECTION. THE DEFAULT CALL USES THE INFO NECESSARY TO CONNECT
+ * TO THE Q5.
  */
 const hidDevice = keyboard.find();
 
@@ -19,6 +23,7 @@ const hidDevice = keyboard.find();
 keyboard.initialize();
 
 allColor("#FF0000");
+allColor("#00FF00");
 allColor("#0000FF");
 
 // sparkle();

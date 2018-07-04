@@ -1,27 +1,33 @@
 import { Device, devices, HID } from "node-hid";
 import { Usb } from "./usb";
 
-export class USBHID extends Usb {
+export class UsbHid extends Usb {
 
     private hidDevice: HID | undefined;
 
-    public connect(vendorId: number, productId: number, usbInterface: number, usage: number) {
+    constructor(protected vendorId: number, protected productId: number, protected deviceInterface: number, protected usage: number) {
+        super(vendorId, productId, deviceInterface, usage);
+    }
+
+    public connect() {
         const device = devices().find((d: Device) => {
-            if (d.vendorId === vendorId && d.productId === productId) {
+            if (d.vendorId === this.vendorId && d.productId === this.productId) {
                 if (process.platform === "darwin") {
-                    return d.usage === usage;
+                    return d.usage === this.usage;
                 } else {
-                    return d.interface === usbInterface;
+                    return d.interface === this.deviceInterface;
                 }
             }
             return false;
         });
+
         if (device === undefined) {
             throw new Error("no deviceInfo");
         }
         if (device.path === undefined) {
             throw new Error("Unable to find device path");
         }
+
         this.hidDevice = new HID(device.path);
     }
 
