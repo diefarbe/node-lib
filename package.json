@@ -1,14 +1,16 @@
 {
   "name": "das",
   "description": "NodeJS library for connecting to the DasKeyboard 5Q",
-  "version": "1.0.0",
-  "author": "Steven Bird",
+  "version": "0.0.1",
+  "author": "The 5Q Reversers",
   "contributors": [
-    "Mike Gardner <mikejr83@gmail.com>"
+    "Mike Gardner <mikejr83@gmail.com>",
+    "Chris Smith <chris@hichris.com>",
+    "Steven Bird"
   ],
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
-  "license": "GPL v3",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf ./dist",
