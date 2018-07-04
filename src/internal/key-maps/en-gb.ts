@@ -1,6 +1,6 @@
 // import { KeyModel } from "../models";
 
-// export const enUS = {
+// export const enGB = {
 //   escape: new KeyModel([25], "escape", "ESC", {
 //     x: 0,
 //     y: 0
@@ -81,7 +81,7 @@
 //     x: 0,
 //     y: 0
 //   }, 0, 0, 0, 1, 2),
-//   backTick: new KeyModel([49], "backTick", "`", {
+//   negate: new KeyModel([49], "negate", "&not;", {
 //     x: 0,
 //     y: 20.25
 //   }, 4.28, 13.5, 0, 1, 2),
@@ -217,7 +217,7 @@
 //     x: 53.5,
 //     y: 33.75
 //   }, 4.28, 13.5, 0, 1, 2),
-//   backSlash: new KeyModel([87], "backSlash", "\\", {
+//   backSlash: new KeyModel([87], "return", "&crarr;", {
 //     x: 57.78,
 //     y: 33.75
 //   }, 6.42, 13.5, 0, 1, 2),
@@ -297,7 +297,7 @@
 //     x: 50.29,
 //     y: 47.25
 //   }, 4.28, 13.5, 0, 1, 2),
-//   return: new KeyModel([111], "return", "&crarr;", {
+//   return: new KeyModel([111], "backSlash", "\\", {
 //     x: 54.57,
 //     y: 47.25
 //   }, 9.63, 13.5, 0, 1, 2),
@@ -316,45 +316,49 @@
 //   shiftLeft: new KeyModel([121], "shiftLeft", "&#8679;-L", {
 //     x: 0,
 //     y: 61.75
-//   }, 9.63, 13.5, 0, 1, 2),
+//   }, 5.50285714408, 13.5, 0, 1, 2),
+//   backTick: new KeyModel([122], "backTick", "`", {
+//     x: 5.502857144,
+//     y: 61.75
+//   }, 4.28, 13.5, 0, 1, 2),
 //   z: new KeyModel([123], "z", "Z", {
-//     x: 9.63,
+//     x: 9.78,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   x: new KeyModel([124], "x", "X", {
-//     x: 13.91,
+//     x: 14.06,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   c: new KeyModel([125], "c", "C", {
-//     x: 18.19,
+//     x: 18.34,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   v: new KeyModel([126], "v", "V", {
-//     x: 22.47,
+//     x: 22.62,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   b: new KeyModel([127], "b", "B", {
-//     x: 26.75,
+//     x: 26.90,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   n: new KeyModel([128], "n", "N", {
-//     x: 31.03,
+//     x: 31.18,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   m: new KeyModel([129], "m", "M", {
-//     x: 35.31,
+//     x: 35.46,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   coma: new KeyModel([130], "comma", ",", {
-//     x: 39.59,
+//     x: 39.74,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   period: new KeyModel([131], "period", ".", {
-//     x: 43.87,
+//     x: 44.02,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   forwardSlash: new KeyModel([132], "forwardSlash", "/", {
-//     x: 48.15,
+//     x: 48.30,
 //     y: 61.75
 //   }, 4.28, 13.5, 0, 1, 2),
 //   shiftRight: new KeyModel([135], "shiftRight", "&#8679;-R", {
