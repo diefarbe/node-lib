@@ -19,6 +19,8 @@ const hidDevice = keyboard.find();
 keyboard.initialize();
 
 allColor("#FF0000");
+allColor("#0000FF");
+
 // sparkle();
 const data = keyboard.getFirmwareVersion();
 console.log("Firmware Version:" + data);

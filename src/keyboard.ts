@@ -1,73 +1,43 @@
-import { Device, devices, HID } from "node-hid";
 import { BrightnessPacket } from "./internal/models/packets/brightness-packet";
 import { FirmwarePacket } from "./internal/models/packets/firmware-packet";
 import { FreezePacket } from "./internal/models/packets/freeze-packet";
 import { InitializePacket } from "./internal/models/packets/initialize-packet";
 import { TriggerPacket } from "./internal/models/packets/trigger-packet";
 import { KeyState } from "./key-state";
+import { USBHID } from "./usb/hid";
+import { Usb } from "./usb/usb";
 
 export class Keyboard {
   private interface: number;
   private vendorId: number;
   private productId: number;
+  private usage: number;
 
-  private device: Device | undefined;
-  private hidDevice: HID | undefined;
-
-  private isInitialized: boolean = false;
-
+  private usbDevice: Usb | undefined;
   private sequence: number = 0;
 
-  constructor(vendorId?: number, productId?: number, deviceInterface?: number) {
+  constructor(vendorId?: number, productId?: number, deviceInterface?: number, usage?: number) {
     this.vendorId = vendorId || 0x24f0;
     this.productId = productId || 0x2020;
     this.interface = deviceInterface || 2;
+    this.usage = usage || 165;
   }
 
-  /**
-   * Finds and connects to the keyboard. It also returns the HID, but this is probably useless.
-   *
-   * @returns {HID}
-   */
-  public find(): HID {
-    const device = devices().find((d: Device) => {
-      if (process.platform === "darwin") {
-        return d.vendorId === this.vendorId && d.productId === this.productId && d.usage === 165;
-      } else {
-        return d.vendorId === this.vendorId && d.productId === this.productId && d.interface === this.interface;
-      }
-    });
-
-    if (device === undefined) {
-      throw new Error("no deviceInfo");
-    }
-
-    this.device = device;
-
-    if (this.device.path === undefined) {
-      throw new Error("Unable to find device path");
-    }
-
-    this.hidDevice = new HID(this.device.path);
-
-    return this.hidDevice;
+  public find(): Usb {
+    this.usbDevice = new USBHID();
+    this.usbDevice.connect(this.vendorId, this.productId, this.interface, this.usage);
+    return this.usbDevice;
   }
 
   /**
    * Initializes the keyboard so we can communicate with it.
    */
   public initialize() {
-    if (this.hidDevice === undefined) {
-      this.find();
-    }
-
-    if (this.hidDevice === undefined) {
+    if (this.usbDevice === undefined) {
       throw new Error("No HID keyboard device has been found.");
     }
 
     this.featureReports(new InitializePacket().buildPacketBytes());
-
-    this.isInitialized = true;
   }
 
   /**
@@ -108,7 +78,7 @@ export class Keyboard {
 
   public getFirmwareVersion() {
     this.featureReports(new FirmwarePacket().buildPacketBytes());
-    const fwVer = this.readData();
+    const fwVer = this.readDataFromDevice();
     return fwVer[3] + "." + fwVer[4] + "." + fwVer[5] + "." +  fwVer[6] + "." +  fwVer[7];
   }
 
@@ -116,13 +86,9 @@ export class Keyboard {
    * Disconnects from the keyboard. Does nothing if already disconnected or not initialized.
    */
   public close() {
-    if (this.hidDevice !== undefined) {
-      this.hidDevice.close();
-
-      this.device = undefined;
-      this.hidDevice = undefined;
-
-      this.isInitialized = false;
+    if (typeof this.usbDevice !== "undefined") {
+      this.usbDevice.disconnect();
+      this.usbDevice = undefined;
     }
   }
 
@@ -132,33 +98,34 @@ export class Keyboard {
     }
   }
 
-  private readData(): number[] {
-    if (this.hidDevice === undefined) {
-      throw new Error("The HID device is undefined.");
-    }
-    const res = this.hidDevice.getFeatureReport(0, 65);
-    if (process.platform === "darwin") {
-      res.unshift(0);
-    }
-    return res;
-  }
-
   private featureReports(report: number[]) {
-    if (this.hidDevice === undefined) {
-      throw new Error("The HID device is undefined.");
-    }
-
     const buff = [0 /* report id */, ...report];
     while (buff.length < 65) {
       buff.push(0);
     }
-    this.sequence++;
-    if (this.sequence > 0xFF) { this.sequence = 0x00; }
     buff[3] = this.sequence;
-    this.hidDevice.sendFeatureReport(buff);
-    const res = this.readData();
+
+    this.writeDataToDevice(buff);
+    const res = this.readDataFromDevice();
     if (res[2] !== 0x14 || res[3] !== this.sequence) {
       throw new Error("no ack " + this.sequence);
     }
+
+    this.sequence++;
+    if (this.sequence > 0xFF) { this.sequence = 0x00; }
+  }
+
+  private readDataFromDevice(): number[] {
+    if (typeof this.usbDevice === "undefined") {
+      throw new Error("Not connected to device");
+    }
+    return this.usbDevice.read();
+  }
+
+  private writeDataToDevice(data: number[]) {
+    if (typeof this.usbDevice === "undefined") {
+      throw new Error("Not connected to device");
+    }
+    this.usbDevice.write(data);
   }
 }
