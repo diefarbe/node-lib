@@ -116,12 +116,12 @@ function sparkleBatch() {
     } else {
       throw new Error("should never happen");
     }
-    // keyboard.apply();
+    keyboard.apply();
     currentKeys.push(key);
 
     if (currentKeys.length > 10) {
       keyboard.setKeyState(new KeyState(currentKeys.splice(0, 1)[0]).setToColorHex("#000000"));
-      // keyboard.apply();
+      keyboard.apply();
     }
   }
 }
