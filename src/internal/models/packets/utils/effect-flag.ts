@@ -13,6 +13,7 @@ export class EffectFlag {
     
     constructor() {
         this.value = 1;
+        this.setTriggerEffectOnApply();
     }
 
     public setIncrementDecrement() {

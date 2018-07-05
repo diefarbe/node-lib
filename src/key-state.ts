@@ -132,7 +132,7 @@ export class KeyState {
     }
 
     public setApplyDelayed() {
-        this.effectFlag.setTriggerEffectNow();
+        this.effectFlag.setTriggerEffectOnApply();
         return this;
     }
 
