@@ -24,3 +24,11 @@ This will give the group `plugdev` access to the keyboard.
 Then reload your udev configuration with: `sudo udevadm control --reload-rules`
 
 Then reconnect your keyboard.
+
+## Firmware Versions
+
+In the POC you'll see a way to check the firmware version. Turns out these keyboards are shipping with versions all over the place. 
+
+Some early versions may not light up the allColors test properly, or may have bugs that make animations like the sparkleBatch test unrunnable.
+
+Right now, for best results - we're supporting the latest firmware (7.3.253). 
