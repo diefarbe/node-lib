@@ -42,11 +42,14 @@ export class KeyModel {
         this.height = data.height;
     }
 
+    /**
+     * This method always returns an array of RED GREEN BLUE in that order.
+     */
     public getRGBChannels(): number[] {
         return [
-            this.ledIds[0].rChannelId,
-            this.ledIds[0].bChannelId,
-            this.ledIds[0].gChannelId
+            this.ledIds[0].rChannelId, // red
+            this.ledIds[0].gChannelId, // green
+            this.ledIds[0].bChannelId, // blue
         ];
     }
 }
