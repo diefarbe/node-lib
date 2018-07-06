@@ -5,6 +5,7 @@ import { InitializePacket } from "./internal/models/packets/initialize-packet";
 import { TriggerPacket } from "./internal/models/packets/trigger-packet";
 import { KeyState } from "./key-state";
 
+import { ChannelState } from "./channel-state";
 import { findUsbDevice, Usb } from "./usb";
 
 export class Keyboard {
@@ -43,6 +44,15 @@ export class Keyboard {
       }
     } else {
       this.executePackets(states);
+    }
+  }
+
+  /**
+   * Sets a KeyState channel to the keyboard (advanced)
+   */
+  public setKeyColorChannel(state: ChannelState) {
+    for (const aPacket of state.build()) {
+      this.featureReports(aPacket);
     }
   }
 
