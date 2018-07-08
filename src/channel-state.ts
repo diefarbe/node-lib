@@ -99,13 +99,22 @@ export class ChannelState {
         return this;
     }
 
-    public setTransition() {
+    public setDecrementIncrement() {
         this.effectFlag.setDecrementIncrement();
         return this;
     }
 
-    public setTransitionReverse() {
+    public setIncrementDecrement() {
         this.effectFlag.setIncrementDecrement();
+        return this;
+    }
+
+    public setTransition(enable: boolean) {
+        if (enable) {
+            this.effectFlag.setEnableTransition();
+        } else {
+            this.effectFlag.setDisableTransition();
+        }
         return this;
     }
 
