@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/diefarbe/node-lib.svg?branch=master)](https://travis-ci.org/diefarbe/node-lib)
+
 # Node Lib
 This is a Node.JS library for interfacing with the DasKeyboard 5Q.
 
