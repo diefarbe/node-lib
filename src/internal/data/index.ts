@@ -1,14 +1,16 @@
 import { IKeyModel, KeyModel } from "../models/key-model";
 
-import enUsData from "./en-us.json";
-import enGbData from "./en-us.json";
+const rawKeyData = {
+  enGbData: require("../../../assets/en-gb.json"),
+  enUsData: require("../../../assets/en-us.json")
+};
 
 export interface IKeyMapCulture {
   [keyName: string]: KeyModel;
 }
 
-export const enUsKeyMapData: IKeyMapCulture = makeCulture(enUsData);
-export const enGbKeyMapData: IKeyMapCulture = makeCulture(enGbData);
+export const enUsKeyMapData: IKeyMapCulture = makeCulture(rawKeyData.enUsData);
+export const enGbKeyMapData: IKeyMapCulture = makeCulture(rawKeyData.enGbData);
 
 function makeCulture(models: IKeyModel[]): IKeyMapCulture {
   const data: IKeyMapCulture = {};
