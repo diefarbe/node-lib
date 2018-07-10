@@ -11,11 +11,17 @@
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "build": "tsc",
+    "build-assets": "ts-node support/build-assets.ts",
     "clean": "rimraf ./dist",
-    "lint": "tslint -p ./",
+    "lint": "tslint -p tsconfig.json",
+    "poc-js": "node POC/js/index.js",
     "poc-ts": "ts-node --project tsconfig.json POC/ts/index.ts",
+    "postbuild": "npm-run-all build-assets",
     "prebuild": "npm-run-all clean",
     "test": "echo \"Ya we probably need to have some unit tests...\""
   },
@@ -23,13 +29,17 @@
     "node-hid": "^0.7.2"
   },
   "devDependencies": {
+    "@types/fs-extra": "^5.0.4",
+    "@types/handlebars": "^4.0.38",
     "@types/node": "^10.5.1",
     "@types/node-hid": "^0.7.0",
-    "@types/usb": "^1.1.6",
+    "fs-extra": "^6.0.1",
+    "handlebars": "^4.0.11",
     "nodemon": "^1.17.5",
     "npm-run-all": "^4.1.3",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.0",
+    "tslib": "^1.9.3",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   }
