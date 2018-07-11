@@ -73,6 +73,34 @@ describe("KeyInfo", () => {
           expect(qknob.ledIds.length).toEqual(5);
         });
       });
+
+      describe("Pipes", () => {
+        let leftPipe: KeyModel;
+        let rightPipe: KeyModel;
+
+        beforeEach(() => {
+          leftPipe = cultureMap["leftPipe"];
+          rightPipe = cultureMap["rightPipe"];
+        });
+
+        it("should have a left pipe.", () => {
+          expect(leftPipe).not.toBeUndefined();
+          expect(leftPipe).not.toBeNull();
+        });
+
+        it("should have a right pipe.", () => {
+          expect(rightPipe).not.toBeUndefined();
+          expect(rightPipe).not.toBeNull();
+        });
+
+        it("should have 9 LEDs for the left pipe.", () => {
+          expect(leftPipe.ledIds.length).toEqual(9);
+        });
+
+        it("should have 7 LEDs for the right pipe.", () => {
+          expect(rightPipe.ledIds.length).toEqual(7);
+        });
+      })
     });
   }
 });
