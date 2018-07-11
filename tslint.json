@@ -5,7 +5,9 @@
     ],
     "linterOptions": {
         "exclude": [
-            "POC"
+            "POC",
+            "support",
+            "src/*.spec.ts"
         ]
     },
     "jsRules": {},

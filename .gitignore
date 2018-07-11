@@ -15,4 +15,8 @@ yarn.lock
 # Outputs
 dist/
 
+# Testing
+.nyc_output/
+coverage/
+
 q-desktop/
