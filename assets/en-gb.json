@@ -190,7 +190,7 @@
   "height": 11.88
 }, {
   "ledIds": [21, 46, 47, 22, 23],
-  "description": "Volume / Q Knob",
+  "description": "QKnob",
   "shortName": "Q-BUT",
   "topLeftCoordinates": {
     "x": 0,

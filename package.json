@@ -23,7 +23,8 @@
     "poc-ts": "ts-node --project tsconfig.json POC/ts/index.ts",
     "postbuild": "npm-run-all build-assets",
     "prebuild": "npm-run-all clean",
-    "test": "env TS_NODE_PROJECT=tsconfig.test.json nyc  jasmine-ts --config=jasmine.json"
+    "test": "env TS_NODE_PROJECT=tsconfig.test.json nyc  jasmine-ts --config=jasmine.json",
+    "watch-test": "nodemon --ext ts --exec npm test"
   },
   "dependencies": {
     "node-hid": "^0.7.2"
