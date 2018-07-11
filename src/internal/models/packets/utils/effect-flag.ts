@@ -32,6 +32,10 @@ export class EffectFlag {
         this.value = this.decrementOnly;
     }
 
+    public setHardwareProfile() {
+        this.value = this.hardwareProfile;
+    }
+
     public setTriggerEffectOnApply() {
         this.value = this.value | this.triggerLaterMask;
     }
@@ -46,9 +50,5 @@ export class EffectFlag {
 
     public setDisableTransition() {
         this.value = this.value | this.transitionMask;
-    }
-
-    public setHardwareProfile() {
-        this.value = this.value | this.hardwareProfile;
     }
 }
