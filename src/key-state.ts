@@ -142,8 +142,8 @@ export class KeyState {
 
         const colorChannels = this.keyInfo.getRGBChannels();
 
-        for (let i = 0; i < 3; i++) {
-            for (const ledId of this.keyInfo.ledIds) {
+        for (const ledId of this.keyInfo.ledIds) {
+            for (let i = 0; i < 3; i++) {
                 packetsToSend.push(new StatePacket(
                     ledId.id,
                     colorChannels[i],
