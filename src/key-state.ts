@@ -136,6 +136,11 @@ export class KeyState {
         return this;
     }
 
+    public setToHardwareProfile() {
+        this.effectFlag.setHardwareProfile();
+        return this;
+    }
+
     public build(): number[][] {
 
         const packetsToSend = [];

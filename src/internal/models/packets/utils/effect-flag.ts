@@ -4,6 +4,7 @@ export class EffectFlag {
 
     public value: number;
 
+    private readonly hardwareProfile = 0x00;
     private readonly incrementOnly = 1;
     private readonly decrementOnly = 2;
     private readonly incrementDecrement = 25;
@@ -45,5 +46,9 @@ export class EffectFlag {
 
     public setDisableTransition() {
         this.value = this.value | this.transitionMask;
+    }
+
+    public setHardwareProfile() {
+        this.value = this.value | this.hardwareProfile;
     }
 }
