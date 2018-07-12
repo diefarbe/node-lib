@@ -137,7 +137,7 @@ export class KeyState {
     }
 
     public setToHardwareProfile() {
-        this.effectFlag.setHardwareProfile();
+        this.effectId = 0;
         return this;
     }
 
@@ -163,7 +163,8 @@ export class KeyState {
                     this.downDecrement,
                     this.upIncrementDelay,
                     this.downDecrementDelay,
-                    this.startDelay
+                    this.startDelay,
+                    this.effectId
                 ).buildPacketBytes());
             }
         }

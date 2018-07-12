@@ -42,8 +42,8 @@ keyboard.initialize();
 
 // cosmos themed profile
 // galaxy(keyboard, 'uk');
-galaxy(keyboard, "us");
-//applyHardwareProfile("en-US");
+//galaxy(keyboard, "us");
+applyHardwareProfile(keyboard, "en-US");
 
 /*
  * Great! Apply our changes!

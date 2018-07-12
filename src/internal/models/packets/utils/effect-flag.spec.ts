@@ -1,6 +1,6 @@
 import { EffectFlag } from "./effect-flag";
 
-describe("", () => {
+describe("EffectFlag", () => {
   it("should default the value to 1.", () => {
     const flag = new EffectFlag();
     expect(flag.value).toEqual(1);
@@ -25,12 +25,5 @@ describe("", () => {
     flag.setIncrementOnly();
 
     expect(flag.value).toEqual(1);
-  });
-
-  it("should set the value to '0' when 'setHardwareProfile' is called.", () => {
-    const flag = new EffectFlag();
-    flag.setHardwareProfile();
-
-    expect(flag.value).toEqual(0);
   });
 });

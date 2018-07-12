@@ -45,7 +45,7 @@ export class StatePacket extends Packet {
     const downDecrement = this.downDecrement || 0;
     const downDecrementDelay = this.downDecrementDelay || 0;
     const startDelay = this.startDelay || 0;
-    const effectId = this.effectId || 0x02;
+    const effectId = this.effectId === undefined ? 0x02 : this.effectId;
     const key = this.key !== undefined ? this.key : 151;
 
     const buffer = Buffer.alloc(33);

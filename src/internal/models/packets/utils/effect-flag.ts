@@ -3,8 +3,7 @@
 export class EffectFlag {
 
     public value: number;
-
-    private readonly hardwareProfile = 0x00;
+    
     private readonly incrementOnly = 1;
     private readonly decrementOnly = 2;
     private readonly incrementDecrement = 25;
@@ -30,10 +29,6 @@ export class EffectFlag {
 
     public setDecrementOnly() {
         this.value = this.decrementOnly;
-    }
-
-    public setHardwareProfile() {
-        this.value = this.hardwareProfile;
     }
 
     public setTriggerEffectOnApply() {
