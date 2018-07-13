@@ -128,6 +128,11 @@ export class ChannelState {
         return this;
     }
 
+    public setToHardwareProfile() {
+        this.effectId = 0;
+        return this;
+    }
+
     public build(): number[][] {
 
         const packetsToSend = [];
@@ -160,7 +165,8 @@ export class ChannelState {
                 this.downDecrement,
                 this.upIncrementDelay,
                 this.downDecrementDelay,
-                this.startDelay
+                this.startDelay,
+                this.effectId,
             ).buildPacketBytes());
         }
 

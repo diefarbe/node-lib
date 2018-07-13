@@ -1,11 +1,6 @@
 import { Keyboard } from "../../src";
 import { 
-  allColor,
   applyHardwareProfile,
-  galaxy,
-  sparkle,
-  sparkleBatch,
-  testKey
  } from "./examples";
 
 // Ok. Let's create a keyboard
@@ -42,7 +37,7 @@ keyboard.initialize();
 
 // cosmos themed profile
 // galaxy(keyboard, 'uk');
-//galaxy(keyboard, "us");
+// galaxy(keyboard, "us");
 applyHardwareProfile(keyboard, "en-US");
 
 /*

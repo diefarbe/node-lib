@@ -1,11 +1,10 @@
+import { ChannelState } from "./channel-state";
 import { BrightnessPacket } from "./internal/models/packets/brightness-packet";
 import { FirmwarePacket } from "./internal/models/packets/firmware-packet";
 import { FreezePacket } from "./internal/models/packets/freeze-packet";
 import { InitializePacket } from "./internal/models/packets/initialize-packet";
 import { TriggerPacket } from "./internal/models/packets/trigger-packet";
 import { KeyState } from "./key-state";
-
-import { ChannelState } from "./channel-state";
 import { findUsbDevice, Usb } from "./usb";
 
 export class Keyboard {

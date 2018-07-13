@@ -1,5 +1,5 @@
 import { KeyInfo } from "./key-info";
-import { KeyModel } from 'internal/models';
+import { KeyModel } from './internal/models';
 
 describe("KeyInfo", () => {
   describe("en-US", () => {
@@ -7,8 +7,8 @@ describe("KeyInfo", () => {
       expect(KeyInfo["en-US"]).not.toBeUndefined();
     });
 
-    it("should have 110 positions defined.", () => {
-      expect(Object.getOwnPropertyNames(KeyInfo["en-US"]).length).toEqual(110);
+    it("should have 114 positions defined.", () => {
+      expect(Object.getOwnPropertyNames(KeyInfo["en-US"]).length).toEqual(114);
     });
   });
 

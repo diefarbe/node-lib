@@ -35,9 +35,13 @@ export class UsbHid extends Usb {
         if (this.hidDevice === undefined) {
             throw new Error("The HID device is undefined.");
         }
-        const res = this.hidDevice.sendFeatureReport(data);
-        if (res !== data.length) {
-            throw new Error("Failed to write data");
+        let res: number = 0;
+        while (res !== data.length) {
+            try {
+                res = this.hidDevice.sendFeatureReport(data);
+            } catch {
+                res = 0;
+            }
         }
     }
 
@@ -45,7 +49,14 @@ export class UsbHid extends Usb {
         if (this.hidDevice === undefined) {
             throw new Error("The HID device is undefined.");
         }
-        const res = this.hidDevice.getFeatureReport(0, 65);
+        let res: number[] = [];
+        while (res.length !== 64) {
+            try {
+                res = this.hidDevice.getFeatureReport(0, 65);
+            } catch {
+                res = [];
+            }
+        }
         if (process.platform === "darwin") {
             res.unshift(0);
         }
