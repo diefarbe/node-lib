@@ -1,4 +1,48 @@
 [{
+  "ledIds": [14],
+  "description": "Game Mode Light",
+  "shortName": "LIGHT_GAME_MODE",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [15],
+  "description": "Number Lock Light",
+  "shortName": "LIGHT_NUM_LOCK",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [16],
+  "description": "Caps Lock Light",
+  "shortName": "LIGHT_CAPS_LOCK",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [17],
+  "description": "Scroll Lock Light",
+  "shortName": "LIGHT_SCR_LOCK",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
   "ledIds": [25],
   "description": "escape",
   "shortName": "ESC",
