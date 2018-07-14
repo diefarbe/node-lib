@@ -50,15 +50,15 @@ export class UsbHid extends Usb {
             throw new Error("The HID device is undefined.");
         }
         let res: number[] = [];
-        while (res.length !== 64) {
+        while (res.length !== 65) {
             try {
                 res = this.hidDevice.getFeatureReport(0, 65);
+                if (process.platform === "darwin") {
+                    res.unshift(0);
+                }
             } catch {
                 res = [];
             }
-        }
-        if (process.platform === "darwin") {
-            res.unshift(0);
         }
         return res;
     }
