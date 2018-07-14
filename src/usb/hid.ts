@@ -47,9 +47,16 @@ export class UsbHid extends Usb {
                     // no-op
                 }
             }
+            let start = Date.now();
             try {
                 res = this.hidDevice.sendFeatureReport(data);
             } catch {
+                let end = Date.now();
+                let took = end - start;
+                if (took < 10) {
+                    // missing device errors will return almost instantly
+                    throw new Error("feature report errored too quickly; device is probably not there anymore: " + took);
+                }
                 res = 0;
             }
             lastAttempt = Date.now();
@@ -73,12 +80,19 @@ export class UsbHid extends Usb {
                     // no-op
                 }
             }
+            let start = Date.now();
             try {
                 res = this.hidDevice.getFeatureReport(0, 65);
                 if (process.platform === "darwin") {
                     res.unshift(0);
                 }
             } catch {
+                let end = Date.now();
+                let took = end - start;
+                if (took < 10) {
+                    // missing device errors will return almost instantly
+                    throw new Error("feature report errored too quickly; device is probably not there anymore: " + took);
+                }
                 res = [];
             }
             lastAttempt = Date.now();
