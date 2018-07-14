@@ -44,6 +44,7 @@ export class UsbHid extends Usb {
                     throw new Error("maximum retry reached");
                 }
                 while (Date.now() < lastAttempt + 100) {
+                    // no-op
                 }
             }
             try {
@@ -69,6 +70,7 @@ export class UsbHid extends Usb {
                     throw new Error("maximum retry reached");
                 }
                 while (Date.now() < lastAttempt + 100) {
+                    // no-op
                 }
             }
             try {
