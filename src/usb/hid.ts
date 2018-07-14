@@ -47,12 +47,12 @@ export class UsbHid extends Usb {
                     // no-op
                 }
             }
-            let start = Date.now();
+            const start = Date.now();
             try {
                 res = this.hidDevice.sendFeatureReport(data);
             } catch {
-                let end = Date.now();
-                let took = end - start;
+                const end = Date.now();
+                const took = end - start;
                 if (took < 10) {
                     // missing device errors will return almost instantly
                     throw new Error("feature report errored too quickly; device is probably not there anymore: " + took);
@@ -80,15 +80,15 @@ export class UsbHid extends Usb {
                     // no-op
                 }
             }
-            let start = Date.now();
+            const start = Date.now();
             try {
                 res = this.hidDevice.getFeatureReport(0, 65);
                 if (process.platform === "darwin") {
                     res.unshift(0);
                 }
             } catch {
-                let end = Date.now();
-                let took = end - start;
+                const end = Date.now();
+                const took = end - start;
                 if (took < 10) {
                     // missing device errors will return almost instantly
                     throw new Error("feature report errored too quickly; device is probably not there anymore: " + took);
