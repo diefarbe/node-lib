@@ -1,6 +1,7 @@
 import { Keyboard } from "../../src";
 import { 
   applyHardwareProfile,
+  cpuMeter,
  } from "./examples";
 
 // Ok. Let's create a keyboard
@@ -40,6 +41,7 @@ keyboard.initialize();
 // galaxy(keyboard, "us");
 applyHardwareProfile(keyboard, "en-US");
 
+cpuMeter(keyboard);
 /*
  * Great! Apply our changes!
  */
@@ -48,4 +50,4 @@ keyboard.apply();
 /*
  * Clean up!
  */
-keyboard.close();
+// keyboard.close();
