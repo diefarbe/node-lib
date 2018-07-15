@@ -4,3 +4,4 @@ export * from "./galaxy";
 export * from "./sparkle-batch";
 export * from "./sparkle";
 export * from "./test-key";
+export * from "./cpu-meter";
