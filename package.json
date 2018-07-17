@@ -1,5 +1,5 @@
 {
-  "name": "das",
+  "name": "@diefarbe/lib",
   "description": "NodeJS library for connecting to the DasKeyboard 5Q",
   "version": "0.0.1",
   "author": "The 5Q Reversers",
