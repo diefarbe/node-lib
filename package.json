@@ -8,6 +8,7 @@
     "Chris Smith <chris@hichris.com>",
     "Stephen Bird <sebirdman@gmail.com>"
   ],
+  "repository": "diefarbe/node-lib",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
