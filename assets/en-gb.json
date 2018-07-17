@@ -765,7 +765,7 @@
 }, {
   "ledIds": [108],
   "description": "semiColon",
-  "shortName": ";",
+  "shortName": "&#59;",
   "topLeftCoordinates": {
     "x": 46.01,
     "y": 47.25
@@ -775,7 +775,7 @@
 }, {
   "ledIds": [109],
   "description": "singleQuote",
-  "shortName": "'",
+  "shortName": "&apos;",
   "topLeftCoordinates": {
     "x": 50.29,
     "y": 47.25
@@ -783,9 +783,9 @@
   "width": 4.28,
   "height": 13.5
 }, {
-  "ledIds": [110, 111],
-  "description": "return",
-  "shortName": "&crarr;",
+  "ledIds": [111],
+  "description": "backSlash",
+  "shortName": "&#92;",
   "topLeftCoordinates": {
     "x": 54.57,
     "y": 47.25
