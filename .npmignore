@@ -1,0 +1,11 @@
+# As a library this folders are really unnecessary to publish
+
+# VSCode settings
+.vscode/
+
+# If anyone needs to look at POC code for their stuff look at source
+POC/
+
+# Items here are only used for builds and other Dev-ops
+support/
+
