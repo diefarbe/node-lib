@@ -1,0 +1,1155 @@
+[{
+  "ledIds": [14],
+  "description": "Game Mode Light",
+  "shortName": "LIGHT_GAME_MODE",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [15],
+  "description": "Number Lock Light",
+  "shortName": "LIGHT_NUM_LOCK",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [16],
+  "description": "Caps Lock Light",
+  "shortName": "LIGHT_CAPS_LOCK",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [17],
+  "description": "Scroll Lock Light",
+  "shortName": "LIGHT_SCR_LOCK",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+},
+{
+  "ledIds": [25],
+  "description": "escape",
+  "shortName": "ESC",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [27],
+  "description": "f1",
+  "shortName": "F1",
+  "topLeftCoordinates": {
+    "x": 8.56,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [28],
+  "description": "f2",
+  "shortName": "F2",
+  "topLeftCoordinates": {
+    "x": 12.84,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [29],
+  "description": "f3",
+  "shortName": "F3",
+  "topLeftCoordinates": {
+    "x": 17.12,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [30],
+  "description": "f4",
+  "shortName": "F4",
+  "topLeftCoordinates": {
+    "x": 21.4,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [32],
+  "description": "f5",
+  "shortName": "F5",
+  "topLeftCoordinates": {
+    "x": 27.82,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [33],
+  "description": "f6",
+  "shortName": "F6",
+  "topLeftCoordinates": {
+    "x": 32.1,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [34],
+  "description": "f7",
+  "shortName": "F7",
+  "topLeftCoordinates": {
+    "x": 36.38,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [35],
+  "description": "f8",
+  "shortName": "F8",
+  "topLeftCoordinates": {
+    "x": 40.66,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [36],
+  "description": "f9",
+  "shortName": "F9",
+  "topLeftCoordinates": {
+    "x": 47.08,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [37],
+  "description": "f10",
+  "shortName": "F10",
+  "topLeftCoordinates": {
+    "x": 51.36,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [38],
+  "description": "f11",
+  "shortName": "F11",
+  "topLeftCoordinates": {
+    "x": 55.64,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [39],
+  "description": "f12",
+  "shortName": "F12",
+  "topLeftCoordinates": {
+    "x": 59.92,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [40],
+  "description": "printScreen",
+  "shortName": "PRT-SC",
+  "topLeftCoordinates": {
+    "x": 65.27,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [41],
+  "description": "screenLock",
+  "shortName": "SRC-LK",
+  "topLeftCoordinates": {
+    "x": 69.55,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [42],
+  "description": "pause",
+  "shortName": "PAUSE",
+  "topLeftCoordinates": {
+    "x": 73.83,
+    "y": 0
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [43, 18],
+  "description": "Macro1",
+  "shortName": "M1",
+  "topLeftCoordinates": {
+    "x": 80.564,
+    "y": 1
+  },
+  "width": 3.4,
+  "height": 11.88
+}, {
+  "ledIds": [44, 19],
+  "description": "Macro2",
+  "shortName": "M2",
+  "topLeftCoordinates": {
+    "x": 83.85,
+    "y": 1
+  },
+  "width": 3.4,
+  "height": 11.88
+}, {
+  "ledIds": [45, 20],
+  "description": "Macro3",
+  "shortName": "M3",
+  "topLeftCoordinates": {
+    "x": 86.75,
+    "y": 1
+  },
+  "width": 3.4,
+  "height": 11.88
+}, {
+  "ledIds": [21, 46, 47, 22, 23],
+  "description": "QKnob",
+  "shortName": "Q-BUT",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 0
+  },
+  "width": 0,
+  "height": 0
+}, {
+  "ledIds": [49],
+  "description": "section",
+  "shortName": "&sect;",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [50],
+  "description": "1",
+  "shortName": "1",
+  "topLeftCoordinates": {
+    "x": 4.28,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [51],
+  "description": "2",
+  "shortName": "2",
+  "topLeftCoordinates": {
+    "x": 8.56,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [52],
+  "description": "3",
+  "shortName": "3",
+  "topLeftCoordinates": {
+    "x": 12.84,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [53],
+  "description": "4",
+  "shortName": "4",
+  "topLeftCoordinates": {
+    "x": 17.12,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [54],
+  "description": "5",
+  "shortName": "5",
+  "topLeftCoordinates": {
+    "x": 21.4,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [55],
+  "description": "6",
+  "shortName": "6",
+  "topLeftCoordinates": {
+    "x": 25.68,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [56],
+  "description": "7",
+  "shortName": "7",
+  "topLeftCoordinates": {
+    "x": 29.96,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [57],
+  "description": "8",
+  "shortName": "8",
+  "topLeftCoordinates": {
+    "x": 34.24,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [58],
+  "description": "9",
+  "shortName": "9",
+  "topLeftCoordinates": {
+    "x": 38.52,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [59],
+  "description": "0",
+  "shortName": "0",
+  "topLeftCoordinates": {
+    "x": 42.8,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [60],
+  "description": "plus",
+  "shortName": "+",
+  "topLeftCoordinates": {
+    "x": 47.08,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [61],
+  "description": "acute",
+  "shortName": "&acute;",
+  "topLeftCoordinates": {
+    "x": 51.36,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [63],
+  "description": "backspace",
+  "shortName": "&#8678;",
+  "topLeftCoordinates": {
+    "x": 55.64,
+    "y": 20.25
+  },
+  "width": 8.56,
+  "height": 13.5
+}, {
+  "ledIds": [64],
+  "description": "insert",
+  "shortName": "INS",
+  "topLeftCoordinates": {
+    "x": 65.27,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [65],
+  "description": "home",
+  "shortName": "HOME",
+  "topLeftCoordinates": {
+    "x": 69.55,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [66],
+  "description": "pageUp",
+  "shortName": "P-UP",
+  "topLeftCoordinates": {
+    "x": 73.83,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [67],
+  "description": "numLock",
+  "shortName": "NUM",
+  "topLeftCoordinates": {
+    "x": 79.18,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [68],
+  "description": "divide",
+  "shortName": "N-/",
+  "topLeftCoordinates": {
+    "x": 83.46,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [69],
+  "description": "multiply",
+  "shortName": "N-*",
+  "topLeftCoordinates": {
+    "x": 87.74,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [70],
+  "description": "substract",
+  "shortName": "N--",
+  "topLeftCoordinates": {
+    "x": 92.32,
+    "y": 20.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [73],
+  "description": "tab",
+  "shortName": "&rarrb;",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 33.75
+  },
+  "width": 6.42,
+  "height": 13.5
+}, {
+  "ledIds": [74],
+  "description": "q",
+  "shortName": "Q",
+  "topLeftCoordinates": {
+    "x": 6.42,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [75],
+  "description": "w",
+  "shortName": "W",
+  "topLeftCoordinates": {
+    "x": 10.7,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [76],
+  "description": "e",
+  "shortName": "E",
+  "topLeftCoordinates": {
+    "x": 14.98,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [77],
+  "description": "r",
+  "shortName": "R",
+  "topLeftCoordinates": {
+    "x": 19.26,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [78],
+  "description": "t",
+  "shortName": "T",
+  "topLeftCoordinates": {
+    "x": 23.54,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [79],
+  "description": "y",
+  "shortName": "Y",
+  "topLeftCoordinates": {
+    "x": 27.82,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [80],
+  "description": "u",
+  "shortName": "U",
+  "topLeftCoordinates": {
+    "x": 32.1,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [81],
+  "description": "i",
+  "shortName": "I",
+  "topLeftCoordinates": {
+    "x": 36.38,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [82],
+  "description": "o",
+  "shortName": "O",
+  "topLeftCoordinates": {
+    "x": 40.66,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [83],
+  "description": "p",
+  "shortName": "P",
+  "topLeftCoordinates": {
+    "x": 44.94,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [84],
+  "description": "aring",
+  "shortName": "&Aring;",
+  "topLeftCoordinates": {
+    "x": 49.22,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [85],
+  "description": "diaeresis",
+  "shortName": "&uml;",
+  "topLeftCoordinates": {
+    "x": 53.5,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [87],
+  "description": "return",
+  "shortName": "&crarr;",
+  "topLeftCoordinates": {
+    "x": 57.78,
+    "y": 33.75
+  },
+  "width": 6.42,
+  "height": 27
+}, {
+  "ledIds": [88],
+  "description": "delete",
+  "shortName": "DEL",
+  "topLeftCoordinates": {
+    "x": 65.27,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [89],
+  "description": "end",
+  "shortName": "END",
+  "topLeftCoordinates": {
+    "x": 69.55,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [90],
+  "description": "pageDown",
+  "shortName": "P-DN",
+  "topLeftCoordinates": {
+    "x": 73.83,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [91],
+  "description": "numpad7",
+  "shortName": "N-7",
+  "topLeftCoordinates": {
+    "x": 79.18,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [92],
+  "description": "numpad8",
+  "shortName": "N-8",
+  "topLeftCoordinates": {
+    "x": 83.46,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [93],
+  "description": "numpad9",
+  "shortName": "N-9",
+  "topLeftCoordinates": {
+    "x": 87.74,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [94],
+  "description": "add",
+  "shortName": "+",
+  "topLeftCoordinates": {
+    "x": 92.32,
+    "y": 33.75
+  },
+  "width": 4.28,
+  "height": 27
+}, {
+  "ledIds": [97],
+  "description": "capsLock",
+  "shortName": "&#8682;",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 47.25
+  },
+  "width": 7.49,
+  "height": 13.5
+}, {
+  "ledIds": [99],
+  "description": "a",
+  "shortName": "A",
+  "topLeftCoordinates": {
+    "x": 7.49,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [100],
+  "description": "s",
+  "shortName": "S",
+  "topLeftCoordinates": {
+    "x": 11.77,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [101],
+  "description": "d",
+  "shortName": "D",
+  "topLeftCoordinates": {
+    "x": 16.05,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [102],
+  "description": "f",
+  "shortName": "F",
+  "topLeftCoordinates": {
+    "x": 20.33,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [103],
+  "description": "g",
+  "shortName": "G",
+  "topLeftCoordinates": {
+    "x": 24.61,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [104],
+  "description": "h",
+  "shortName": "H",
+  "topLeftCoordinates": {
+    "x": 28.89,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [105],
+  "description": "j",
+  "shortName": "J",
+  "topLeftCoordinates": {
+    "x": 33.17,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [106],
+  "description": "k",
+  "shortName": "K",
+  "topLeftCoordinates": {
+    "x": 37.45,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [107],
+  "description": "l",
+  "shortName": "L",
+  "topLeftCoordinates": {
+    "x": 41.73,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [108],
+  "description": "ouml",
+  "shortName": "&Ouml;",
+  "topLeftCoordinates": {
+    "x": 46.01,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [109],
+  "description": "auml",
+  "shortName": "&Auml;",
+  "topLeftCoordinates": {
+    "x": 50.29,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [111],
+  "description": "singleQuote",
+  "shortName": "&apos;",
+  "topLeftCoordinates": {
+    "x": 54.57,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [115],
+  "description": "numpad4",
+  "shortName": "N-4",
+  "topLeftCoordinates": {
+    "x": 79.18,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [116],
+  "description": "numpad5",
+  "shortName": "N-5",
+  "topLeftCoordinates": {
+    "x": 83.46,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [117],
+  "description": "numpad6",
+  "shortName": "N-6",
+  "topLeftCoordinates": {
+    "x": 87.74,
+    "y": 47.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [121],
+  "description": "shiftLeft",
+  "shortName": "&#8679;-L",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 61.75
+  },
+  "width": 5.50285714408,
+  "height": 13.5
+}, {
+  "ledIds": [122],
+  "description": "lessThan",
+  "shortName": "&lt;",
+  "topLeftCoordinates": {
+    "x": 5.502857144,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [123],
+  "description": "z",
+  "shortName": "Z",
+  "topLeftCoordinates": {
+    "x": 9.78,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [124],
+  "description": "x",
+  "shortName": "X",
+  "topLeftCoordinates": {
+    "x": 14.06,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [125],
+  "description": "c",
+  "shortName": "C",
+  "topLeftCoordinates": {
+    "x": 18.34,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [126],
+  "description": "v",
+  "shortName": "V",
+  "topLeftCoordinates": {
+    "x": 22.62,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [127],
+  "description": "b",
+  "shortName": "B",
+  "topLeftCoordinates": {
+    "x": 26.90,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [128],
+  "description": "n",
+  "shortName": "N",
+  "topLeftCoordinates": {
+    "x": 31.18,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [129],
+  "description": "m",
+  "shortName": "M",
+  "topLeftCoordinates": {
+    "x": 35.46,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [130],
+  "description": "comma",
+  "shortName": ",",
+  "topLeftCoordinates": {
+    "x": 39.74,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [131],
+  "description": "period",
+  "shortName": ".",
+  "topLeftCoordinates": {
+    "x": 44.02,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [132],
+  "description": "dash",
+  "shortName": "-",
+  "topLeftCoordinates": {
+    "x": 48.15,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [134, 135],
+  "description": "shiftRight",
+  "shortName": "&#8679;-R",
+  "topLeftCoordinates": {
+    "x": 52.43,
+    "y": 61.75
+  },
+  "width": 11.77,
+  "height": 13.5
+}, {
+  "ledIds": [137],
+  "description": "upArrow",
+  "shortName": "&uarr;",
+  "topLeftCoordinates": {
+    "x": 69.55,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [139],
+  "description": "numpad1",
+  "shortName": "N-1",
+  "topLeftCoordinates": {
+    "x": 79.18,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [140],
+  "description": "numpad2",
+  "shortName": "N-2",
+  "topLeftCoordinates": {
+    "x": 83.46,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [141],
+  "description": "numpad3",
+  "shortName": "N-3",
+  "topLeftCoordinates": {
+    "x": 87.74,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [166],
+  "description": "NumPad_ENTER",
+  "shortName": "&ldsh;",
+  "topLeftCoordinates": {
+    "x": 92.32,
+    "y": 61.75
+  },
+  "width": 4.28,
+  "height": 27
+}, {
+  "ledIds": [145],
+  "description": "ctrLeft",
+  "shortName": "CTR-L",
+  "topLeftCoordinates": {
+    "x": 0,
+    "y": 75.25
+  },
+  "width": 5.50285714408,
+  "height": 13.5
+}, {
+  "ledIds": [146],
+  "description": "leftWindowKey",
+  "shortName": "WIN-L",
+  "topLeftCoordinates": {
+    "x": 5.502857144,
+    "y": 75.25
+  },
+  "width": 5.07485714408,
+  "height": 13.5
+}, {
+  "ledIds": [147],
+  "description": "altLeft",
+  "shortName": "ALT-L",
+  "topLeftCoordinates": {
+    "x": 11.00571431,
+    "y": 75.25
+  },
+  "width": 4.94645714408,
+  "height": 13.5
+}, {
+  "ledIds": [151],
+  "description": "space",
+  "shortName": "SPC",
+  "topLeftCoordinates": {
+    "x": 16.50857143,
+    "y": 75.25
+  },
+  "width": 25.68,
+  "height": 13.5
+}, {
+  "ledIds": [155],
+  "description": "altRight",
+  "shortName": "ALT-R",
+  "topLeftCoordinates": {
+    "x": 42.80611428,
+    "y": 75.25
+  },
+  "width": 5.49001714408,
+  "height": 13.5
+}, {
+  "ledIds": [156],
+  "description": "select",
+  "shortName": "FN",
+  "topLeftCoordinates": {
+    "x": 48.03382857,
+    "y": 75.25
+  },
+  "width": 5.50285714408,
+  "height": 13.5
+}, {
+  "ledIds": [157],
+  "description": "rightWindowKey",
+  "shortName": "WIN-R",
+  "topLeftCoordinates": {
+    "x": 53.37404572,
+    "y": 75.25
+  },
+  "width": 5.50285714408,
+  "height": 13.5
+}, {
+  "ledIds": [159],
+  "description": "ctrRight",
+  "shortName": "CTR-R",
+  "topLeftCoordinates": {
+    "x": 58.80628286,
+    "y": 75.25
+  },
+  "width": 5.5028571398,
+  "height": 13.5
+}, {
+  "ledIds": [160],
+  "description": "leftArrow",
+  "shortName": "&larr;",
+  "topLeftCoordinates": {
+    "x": 65.27,
+    "y": 75.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [161],
+  "description": "downArrow",
+  "shortName": "&darr;",
+  "topLeftCoordinates": {
+    "x": 69.55,
+    "y": 75.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [162],
+  "description": "rightArrow",
+  "shortName": "&rarr;",
+  "topLeftCoordinates": {
+    "x": 73.83,
+    "y": 75.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [164],
+  "description": "numpad0",
+  "shortName": "N-0",
+  "topLeftCoordinates": {
+    "x": 79.18,
+    "y": 75.25
+  },
+  "width": 8.56,
+  "height": 13.5
+}, {
+  "ledIds": [165],
+  "description": "NumPad_Decimal",
+  "shortName": "N-.",
+  "topLeftCoordinates": {
+    "x": 87.74,
+    "y": 75.25
+  },
+  "width": 4.28,
+  "height": 13.5
+}, {
+  "ledIds": [0, 24, 48, 72, 96, 120, 144, 168, 192],
+  "description": "leftPipe",
+  "shortName": "|-L",
+  "topLeftCoordinates": {
+    "x": -1.0272,
+    "y": 27
+  },
+  "width": 0,
+  "height": 54
+}, {
+  "ledIds": [71, 95, 119, 143, 167, 191, 215],
+  "description": "rightPipe",
+  "shortName": "|-R",
+  "topLeftCoordinates": {
+    "x": 97.7552,
+    "y": 27
+  },
+  "width": 0,
+  "height": 54
+}]
