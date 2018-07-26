@@ -244,8 +244,8 @@
   "height": 23.625
 }, {
   "ledIds": [49],
-  "description": "negate",
-  "shortName": "&not;",
+  "description": "section",
+  "shortName": "&sect;",
   "topLeftCoordinates": {
     "x": 0,
     "y": 20.25
@@ -354,8 +354,8 @@
   "height": 13.5
 }, {
   "ledIds": [60],
-  "description": "dash",
-  "shortName": "-",
+  "description": "plus",
+  "shortName": "+",
   "topLeftCoordinates": {
     "x": 47.08,
     "y": 20.25
@@ -364,8 +364,8 @@
   "height": 13.5
 }, {
   "ledIds": [61],
-  "description": "equalSign",
-  "shortName": "=",
+  "description": "acute",
+  "shortName": "&acute;",
   "topLeftCoordinates": {
     "x": 51.36,
     "y": 20.25
@@ -564,8 +564,8 @@
   "height": 13.5
 }, {
   "ledIds": [84],
-  "description": "openBracket",
-  "shortName": "[",
+  "description": "aring",
+  "shortName": "&Aring;",
   "topLeftCoordinates": {
     "x": 49.22,
     "y": 33.75
@@ -574,8 +574,8 @@
   "height": 13.5
 }, {
   "ledIds": [85],
-  "description": "closeBracket",
-  "shortName": "]",
+  "description": "diaeresis",
+  "shortName": "&uml;",
   "topLeftCoordinates": {
     "x": 53.5,
     "y": 33.75
@@ -591,7 +591,7 @@
     "y": 33.75
   },
   "width": 6.42,
-  "height": 13.5
+  "height": 27
 }, {
   "ledIds": [88],
   "description": "delete",
@@ -764,8 +764,8 @@
   "height": 13.5
 }, {
   "ledIds": [108],
-  "description": "semiColon",
-  "shortName": "&#59;",
+  "description": "ouml",
+  "shortName": "&Ouml;",
   "topLeftCoordinates": {
     "x": 46.01,
     "y": 47.25
@@ -774,8 +774,8 @@
   "height": 13.5
 }, {
   "ledIds": [109],
-  "description": "singleQuote",
-  "shortName": "&apos;",
+  "description": "auml",
+  "shortName": "&Auml;",
   "topLeftCoordinates": {
     "x": 50.29,
     "y": 47.25
@@ -784,13 +784,13 @@
   "height": 13.5
 }, {
   "ledIds": [111],
-  "description": "backSlash",
-  "shortName": "&#92;",
+  "description": "singleQuote",
+  "shortName": "&apos;",
   "topLeftCoordinates": {
     "x": 54.57,
     "y": 47.25
   },
-  "width": 9.63,
+  "width": 4.28,
   "height": 13.5
 }, {
   "ledIds": [115],
@@ -834,8 +834,8 @@
   "height": 13.5
 }, {
   "ledIds": [122],
-  "description": "backTick",
-  "shortName": "`",
+  "description": "lessThan",
+  "shortName": "&lt;",
   "topLeftCoordinates": {
     "x": 5.502857144,
     "y": 61.75
@@ -934,8 +934,8 @@
   "height": 13.5
 }, {
   "ledIds": [132],
-  "description": "forwardSlash",
-  "shortName": "/",
+  "description": "dash",
+  "shortName": "-",
   "topLeftCoordinates": {
     "x": 48.15,
     "y": 61.75
