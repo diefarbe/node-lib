@@ -3,10 +3,10 @@
     "description": "Game Mode Light",
     "shortName": "LIGHT_GAME_MODE",
     "topLeftCoordinates": {
-      "x": 0,
-      "y": 0
+      "x": 65.27,
+      "y": 47.25
     },
-    "width": 4.28,
+    "width": 3.21,
     "height": 13.5
   },
   {
@@ -14,10 +14,10 @@
     "description": "Number Lock Light",
     "shortName": "LIGHT_NUM_LOCK",
     "topLeftCoordinates": {
-      "x": 0,
-      "y": 0
+      "x": 68.48,
+      "y": 47.25
     },
-    "width": 4.28,
+    "width": 3.21,
     "height": 13.5
   },
   {
@@ -25,10 +25,10 @@
     "description": "Caps Lock Light",
     "shortName": "LIGHT_CAPS_LOCK",
     "topLeftCoordinates": {
-      "x": 0,
-      "y": 0
+      "x": 71.69,
+      "y": 47.25
     },
-    "width": 4.28,
+    "width": 3.21,
     "height": 13.5
   },
   {
@@ -36,10 +36,10 @@
     "description": "Scroll Lock Light",
     "shortName": "LIGHT_SCR_LOCK",
     "topLeftCoordinates": {
-      "x": 0,
-      "y": 0
+      "x": 74.90,
+      "y": 47.25
     },
-    "width": 4.28,
+    "width": 3.21,
     "height": 13.5
   },
   {
@@ -237,11 +237,11 @@
     "description": "QKnob",
     "shortName": "Q-BUT",
     "topLeftCoordinates": {
-      "x": 0,
-      "y": 0
+      "x": 92.32,
+      "y": -7.5
     },
-    "width": 0,
-    "height": 0
+    "width": 7.49,
+    "height": 23.625
   }, {
     "ledIds": [49],
     "description": "backTick",
