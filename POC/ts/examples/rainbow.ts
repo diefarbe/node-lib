@@ -56,17 +56,18 @@ export function rainbow(keyboard: Keyboard, region: string) {
 	var startDelay = 0;
 	
 	// array of led_IDs for each row
-	row[0] = rangeBetween(145,166); 
-	row[1] = rangeBetween(121,142);
-	row[2] = rangeBetween(97,118);
-	row[3] = rangeBetween(73,94);
-	row[4] = rangeBetween(49,70);
-	// row[5] = rangeBetween(25,42); // row 5 minus media keys and Q knob
-	row[5] = rangeBetween(18,47); // row 5 with media and Q knob
+	row.push(rangeBetween(145,166)); // row 0, contains spacebar
+	row.push(rangeBetween(121,142)); // row 1
+	row.push(rangeBetween(97,118)); // row 2
+	row.push(rangeBetween(73,94)); // row 3
+	row.push(rangeBetween(49,70)); // row 4
+	// row.push(rangeBetween(25,42)); // row 5 minus media keys and Q knob
+	row.push(rangeBetween(18,47)); // row 5 with media and Q knob
 
 	// add lighpipes to row 5
 	var leftPipe = [0, 24, 48, 72, 96, 120, 144, 168, 192];
 	var rightPipe = [71, 95, 119, 143, 167, 191, 215];
+	type channel = "red" | "green" | "blue";
 	for (var i = leftPipe.length - 1; i >= 0; i--) {
 		row[5].push(leftPipe[i]);
 	}
@@ -97,11 +98,14 @@ export function rainbow(keyboard: Keyboard, region: string) {
 					// console.log("key: ", key);
 					for (var chan = 0; chan < 3; chan++) {
 						var delay = (340 * chan) + (index * multiplier); // delay offsets the channels
-						// console.log("delay: ", delay);
-						// console.log(" ");
-
-						// @ts-ignore: incorrectly? complains about mismatch on ChannelState arguments
-						keyboard.setKeyColorChannel(new ChannelState(key, chan)
+						let chanName: channel = "red";
+						if (chan == 1) {
+							chanName = "green";
+						} else if (chan == 2) {
+							chanName = "blue";
+						}
+						
+						keyboard.setKeyColorChannel(new ChannelState(key, chanName)
 						.setUpHoldLevel(maxLevel)
 						.setUpMaximumLevel(maxLevel)
 						.setDownHoldLevel(minLevel)
@@ -113,8 +117,9 @@ export function rainbow(keyboard: Keyboard, region: string) {
 						.setUpHoldDelay(holdfor)
 						.setDownHoldDelay(holdfor)
 						.setStartDelay(delay)
-						.setTransition()
-						.enableTransition()
+						.setTransition(true)
+						.setDecrementIncrement()
+						// .enableTransition()
 						.setApplyDelayed()
 						)
 					}
