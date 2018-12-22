@@ -23,12 +23,12 @@ export class ChannelState {
     private effectId?: number;
 
     private keyInfo: KeyModel;
-    private desiredColorChannel?: number;
+    private desiredColorChannel: "red" | "green" | "blue";
     private effectFlag: EffectFlag = new EffectFlag();
 
     constructor(
         keyInfo: KeyModel,
-        channel: number,
+        channel: "red" | "green" | "blue"
     ) {
         this.keyInfo = keyInfo;
         this.desiredColorChannel = channel;
@@ -109,23 +109,12 @@ export class ChannelState {
         return this;
     }
 
-    public setTransition() {
-        this.effectFlag.setDecrementIncrement();
-        return this;
-    }
-
-    public setTransitionReverse() {
-        this.effectFlag.setIncrementDecrement();
-        return this;
-    }
-
-    public enableTransition() {
-        this.effectFlag.setEnableTransition();
-        return this;
-    }
-
-    public disbleTransition() {
-        this.effectFlag.setDisableTransition();
+    public setTransition(enable: boolean) {
+        if (enable) {
+            this.effectFlag.setEnableTransition();
+        } else {
+            this.effectFlag.setDisableTransition();
+        }
         return this;
     }
 
@@ -151,7 +140,6 @@ export class ChannelState {
         const colorChannels = this.keyInfo.getRGBChannels();
 
         let ourColorChannel = 0;
-        /*
         if (this.desiredColorChannel === "red") {
             ourColorChannel = colorChannels[0];
         }
@@ -161,24 +149,10 @@ export class ChannelState {
         if (this.desiredColorChannel === "blue") {
             ourColorChannel = colorChannels[2];
         }
-        */
-
-        if (this.desiredColorChannel === 0) {
-            ourColorChannel = colorChannels[0];
-        } else if (this.desiredColorChannel === 1) {
-            ourColorChannel = colorChannels[1];
-        } else if (this.desiredColorChannel === 2) {
-            ourColorChannel = colorChannels[2];
-        } else {
-            ourColorChannel = colorChannels[0];
-        }
-
-        // ourColorChannel = colorChannels[this.desiredColorChannel];
 
         for (const ledId of this.keyInfo.ledIds) {
             packetsToSend.push(new StatePacket(
                 ledId.id,
-                // this.desiredColorChannel,
                 ourColorChannel,
                 this.effectFlag,
                 this.upHoldLevel,
@@ -195,6 +169,7 @@ export class ChannelState {
                 this.effectId,
             ).buildPacketBytes());
         }
+
         return packetsToSend;
 
     }
