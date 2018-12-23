@@ -22,11 +22,11 @@ function rangeBetween(startNo:number, endNo:number) {
 export function rainbow(keyboard: Keyboard, region: string) {
 
 	allColor(keyboard, "#000000"); // blackout keyboard
-	var multiplier = 170; // delay between rows, using 170 because thats 1020 (cycle time) / 6 (rows)
+	var multiplier = 25; // delay between rows
 	var maxLevel = 255; // channel goes to full brightness (note using more than 255 will work but spill over into brightness: breaking the brightness key at some level)
 	var minLevel = 0; // channel goes fully off
 	var increment = 1; // increment step up and down
-	var incDelay = 1; // hold time for each increment step
+	var incDelay = 0; // hold time for each increment step
 	var holdfor = 255; // hold time at max/min levels
 
 	// these values can be changed but have to sync up
