@@ -46,7 +46,7 @@ export function fire(keyboard: Keyboard, region: string) {
 		"6,6,6"
 	];
 
-	allColor(keyboard, "#0A0A0A"); // init ash
+	allColor(keyboard, "#FF2F0A"); // light furnace
 
 	let baseRow = rangeBetween(145,166);
 	shuffle(baseRow);
@@ -69,8 +69,10 @@ export function fire(keyboard: Keyboard, region: string) {
 	let delay: number = 0;
 
 	while (baseRow.length > 0) { // loop through bottom row of keys
-		let downHoldDelay  = Math.floor(Math.random()*75+50);
-		let upHoldDelay  = Math.floor(Math.random()*550+200);
+                let downHoldDelay  = Math.floor(Math.random()*25+10); // realistic
+		let upHoldDelay  = Math.floor(Math.random()*110+30); // realistic
+		// let downHoldDelay  = Math.floor(Math.random()*75+50); // relaxing
+		// let upHoldDelay  = Math.floor(Math.random()*550+200); // relaxing
 		let startKey = baseRow.pop();
 		currentRow = 0;
 		delay = 0; // reset delay so we start with a flare of fire
